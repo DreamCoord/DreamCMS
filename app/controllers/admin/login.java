@@ -32,7 +32,8 @@ public class login extends Controller{
 //			session().put("username", username);
 //			session().put("real_name", admin.real_name);
 //			System.out.println("win");
-			renderJSON("{\"state\":\"ok\"}");
+//			renderJSON("{\"state\":\"ok\"}");
+			redirect("/admin/index");
 		}else{
 			System.out.println("err");
 			renderJSON("{\"state\":\"err\"}");

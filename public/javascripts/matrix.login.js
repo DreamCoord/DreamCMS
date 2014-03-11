@@ -19,35 +19,35 @@ $(document).ready(function(){
     });
 	
 	
-	$('#to-login').click(function(){
-        var loginoption = function() {
-            var options = {
-                type : "post",
-                dataType : "json",
-                url : "verification",
-                beforeSubmit : function(){
-
-                },
-                success : function(data){
-                    console.log(data);
-                    if(data.state=="ok"){
-                        window.location.href="index";
-                    }else{
-                        $("#err").show();
-                    }
-                },
-                error : function(){
-
-                }
-            };
-            // 异步提交登陆请求
-            $("#loginform").ajaxSubmit(options);
-
-        };
-        //表单验证
-        $("#loginform").validate(ec.ValidateOption(loginoption).Option);
-
-	});
+	//$('#to-login').click(function(){
+//        var loginoption = function() {
+//            var options = {
+//                type : "post",
+//                dataType : "json",
+//                url : "verification",
+//                beforeSubmit : function(){
+//
+//                },
+//                success : function(data){
+//                    console.log(data);
+//                    if(data.state=="ok"){
+//                        window.location.href="index";
+//                    }else{
+//                        $("#err").show();
+//                    }
+//                },
+//                error : function(){
+//
+//                }
+//            };
+//            // 异步提交登陆请求
+//            $("#loginform").ajaxSubmit(options);
+//
+//        };
+//        //表单验证
+//        $("#loginform").validate(ec.ValidateOption(loginoption).Option);
+//
+//	});
 
     
 //    if($.browser.msie == true && $.browser.version.slice(0,3) < 10) {
