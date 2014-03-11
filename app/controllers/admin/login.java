@@ -14,6 +14,10 @@ public class login extends Controller{
 		session.clear();
 		render("admin/login.html");
 	}
+	public static void logout(){
+		session.clear();
+		redirect("/admin/index");
+	}
 	//验证信息
 	public static void Verification(String username ,String password){
 		validation.required(username);

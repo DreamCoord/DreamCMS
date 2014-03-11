@@ -50,6 +50,7 @@ GET     /public/                                staticDir:public
 GET     /admin									admin.index.index
 GET     /admin/index							admin.index.index
 GET     /admin/login							admin.login.login
+GET /admin/logout admin.login.logout
 POST    /admin/verification						admin.login.Verification
 GET     /admin/register							admin.login.register
 #文章管理
