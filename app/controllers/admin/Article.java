@@ -16,11 +16,11 @@ import com.alibaba.fastjson.JSON;
 public class Article extends Controller{
 //	获取所有文章
 	public static void allArticle(){
-		List<mag_allarticlelist> artlist =  mag_article.find("select new backmodels.mag_allarticlelist(id,title,author,tags,time,content) from mag_article order by id desc").fetch();
-		String allStr = JSON.toJSONString(artlist);
-		System.out.println(allStr);
-		renderJSON("{\"data\":"+allStr+"}");
-		
+		List<mag_allarticlelist> articles =  mag_article.find("select new backmodels.mag_allarticlelist(id,title,author,tags,time,content) from mag_article order by id desc").fetch();
+//		String allStr = JSON.toJSONString(artlist);
+//		System.out.println(allStr);
+//		renderJSON("{\"data\":"+allStr+"}");
+		render(articles);
 	}
 //	查询文章
 	public static void selectArticle(){
@@ -50,12 +50,11 @@ public class Article extends Controller{
 		renderJSON(jsonStr);
 	}
 
-//	删除文章
-	public static void delArticle(){
+	public static void delete(int id){
 		
 	}
-//	更新文章
-	public static void updateArticle(){
+
+	public static void edit(int id){
 		
 	}
 	
