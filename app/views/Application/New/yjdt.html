@@ -1,0 +1,41 @@
+#{extends './new_model.html'/}
+#{set newstop10:data /}
+#{set yjdttop10:data /}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".current-location").append(">     业界动态");
+       $("#yjdt").attr('class','current');
+    });
+</script>
+
+
+<div class="inner">
+    <div class="title clearfix">
+        <h2>业界动态</h2>
+
+    </div>
+    <ul class="news-list">
+
+
+        #{list items:data, as:'data' }
+        <li>
+            <span>[${data.time}]</span>
+            <a href="@{New.pages(data.id)}" target="_blank" title="${data.title}" style="text-decoration: none;">${data.title}</a>
+        </li>
+        #{/list}
+
+
+
+        <li class="clearfix news-line"></li>
+
+
+
+
+    </ul>
+    <div class="pages" style="z-index: 10; position: absolute; top: 1020px; width: 540px;">
+        <ol class="clearfix">
+            <script language="JavaScript">document.write(getPageNav(2, 0, 32, 'index', 'htm'));</script>
+
+        </ol>
+    </div>
+</div>

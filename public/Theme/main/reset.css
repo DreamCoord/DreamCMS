@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+
+html { height: 100% }
+body { min-height: 100% }
+body { _height: 100% }
+body, div, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, pre, code, iframe, form, fieldset, legend, input, select, textarea, button, p, blockquote, th, td { margin: 0; padding: 0 }
+li { list-style-type: none }
+h1, h2, h3, h4, h5, h6 { font-size: 100% }
+iframe, frame, fieldset, img { border: 0 none }
+img { vertical-align: top }
+input, select, textarea, button { color: inherit; font-size: inherit }
+input[type=text], input[type=password], textarea { -webkit-border-radius: 0; -webkit-appearance: none }
+button { cursor: pointer }
+textarea { resize: none }
+table { border-collapse: collapse; border-spacing: 0 }
+caption, th { text-align: left }
+th { font-weight: normal }
+blockquote:before, blockquote:after, q:before, q:after { content: ""; content: none }
+em, cite { font-style: normal }
+:focus { outline: 0 none }
+
+.clearfix:after { content: "."; display: block; clear: both; height: 0; overflow: hidden }
+.clearfix { zoom: 1 }
+
+.clear { display: block!important; float: none!important; clear: both; width: auto!important; max-width: inherit; min-width: inherit; height: 0; max-height: inherit; min-height: inherit; margin: 0!important; padding: 0!important; border: 0 none!important; font-size: 0; line-height: 0 }

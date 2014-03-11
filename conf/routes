@@ -1,0 +1,124 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       Application.index
+GET     /index.html                             Application.index
+#新闻资讯
+GET		/news									New.index
+GET		/news/tzgg								New.tzgg
+GET		/news/yjdt								New.yjdt
+GET     /news/xwzt								New.xwzt
+GET		/news/pages								New.pages
+GET		/news/hzmt								New.hzmt
+#名家名作
+GET		/mjmz									Mjmz.index
+GET		/mjmz/zzml								Mjmz.zzml
+GET		/mjmz/zpzs								Mjmz.zpzs
+GET		/mjmz/zxzl								Mjmz.zxzl
+GET		/mjmz/pages								Mjmz.pages
+GET		/mjmz/classlist							Mjmz.ClassList
+#交流服务
+GET		/jlfw									Jlfw.index
+GET		/jlfw/zzjj								Jlfw.zzjj
+GET		/jlfw/yjfk								Jlfw.yjfk
+GET		/jlfw/wldc								Jlfw.wldc
+#投资收藏
+GET		/tzsc									Tzsc.index
+GET		/tzsc/tzsz								Tzsc.tzsz
+GET		/tzsc/yssd								Tzsc.yssd
+#合作支持
+GET		/hzzc									Hzzc.index
+GET		/hzzc/hzfs								Hzzc.hzfs
+GET		/hzzc/jzwm								Hzzc.jzwm
+GET		/hzzc/lxwm								Hzzc.lxwm
+#其他部分
+GET     /websitemap                             Other.websitemap
+GET     /yqlj		                            Other.yqlj
+GET     /jszc	                                Other.jszc
+GET		/hyfw									Other.hyfw
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+#*       /{controller}/{action}                  {controller}.{action}
+#后台导航
+GET     /admin									admin.index.index
+GET     /admin/index							admin.index.index
+GET     /admin/login							admin.login.login
+POST    /admin/verification						admin.login.Verification
+GET     /admin/register							admin.login.register
+#文章管理
+GET		/admin/allArticle						admin.Article.allArticle
+POST	/admin/addArticle						admin.Article.addArticle
+#分类管理
+GET		/admin/allArtClass						admin.Classify.allArticleClass
+POST    /admin/addClassify						admin.Classify.addClassify
+GET		/admin/allClassify						admin.Classify.allClassify
+POST	/admin/delClassify						admin.Classify.delClassify
+POST	/admin/updateClassify					admin.Classify.updateClassify
+#作品管理
+POST	/admin/addWorks							admin.Works.addWorks
+POST	/admin/delWorks							admin.Works.delWorks
+POST	/admin/getWorks							admin.Works.selectWorks
+GET		/admin/allWorks							admin.Works.allWorks
+GET		/admin/allWorksClass					admin.Works.allWorksClass
+#作家管理
+GET		/admin/allMember						admin.Member.allMember
+GET		/admin/allHytj							admin.Member.allHytj
+POST	/admin/addHytj							admin.Member.addHytj
+POST	/admin/addMember						admin.Member.addMember
+GET		/admin/allDengji						admin.Member.allDengji
+#Banner
+GET		/admin/allBanner						admin.Banner.allBanner
+POST	/admin/addBanner						admin.Banner.addBanner
+POST	/admin/delBanner						admin.Banner.delBanner
+POST	/admin/getBanner						admin.Banner.getBanner
+GET		/admin/allBannerlist					admin.Banner.allBannerList
+#合作媒体管理
+GET		/admin/allMediaPar						admin.MediaPar.allMediaPar
+POST	/admin/addMediaPar						admin.MediaPar.addMediaPar
+POST	/admin/delMediaPar						admin.MediaPar.delMediaPar
+POST	/admin/getMediaPar						admin.MediaPar.getMediaPar
+#页面管理
+POST	/admin/addPage							admin.Page.addPage
+GET		/admin/allPages							admin.Page.allPages
+#用户管理
+POST	/admin/addUser							admin.RBAC.addUser
+GET		/admin/allUser							admin.RBAC.allUser
+POST	/admin/updateUser						admin.RBAC.updateUser
+POST    /admin/delUser							admin.RBAC.delUser
+#用户组管理
+POST	/admin/addUserGroup						admin.RBAC.addUserGroup
+GET		/admin/allUserGroup						admin.RBAC.allUserGroup
+GET		/admin/getUserGroup						amdin.RBAC.getUserGroup
+POST	/admin/delUserGroup						admin.RBAC.delUserGroup
+POST	/admin/updateUserGroup					admin.RBAC.updateUserGroup
+#角色管理
+POST    /admin/addRole							admin.RBAC.addRole
+GET		/admin/allRole							admin.RBAC.allRole
+POST	/admin.delRole							admin.RBAC.delRole
+#友情链接管理
+POST	/admin/addlinks							admin.SysConfig.addWebSiteFLinks
+POST	/admin/dellinks							admin.SysConfig.delWebSiteFLinks
+POST	/admin/updatelinks						admin.SysConfig.updateWebSiteFLinks
+GET		/admin/alllinks							admin.SysConfig.allWebSiteFLinks
+#网站参数配置
+POST	/admin/saveSyscfg						admin.SysConfig.saveWebSiteCfg
+GET		/admin/getSyscfg						admin.SysConfig.getSyscfg
+#菜单管理
+GET		/admin/allNav							admin.Navicat.allNavicat
+POST	/admin/checkNav							admin.Navicat.checkNavicat
+GET		/admin/allmenus							admin.Navicat.allMenus
+
+#文件操作
+
+POST	/imgUpload								FileOper.imgManager.uploadjson
+GET		/fileManager							FileOper.fileManager.manager
+#静态路由
+GET    /public          						staticDir:public
+

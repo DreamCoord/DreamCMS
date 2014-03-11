@@ -1,0 +1,62 @@
+#{extends './mjmz_model.html'/}
+#{set title:'墨缘798' /}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.current-exh-slider ul').before('<p id="num-nav1" class="num-nav">').cycle({
+            timeout: 5000,
+            pager: '#num-nav1'
+        });
+        $('.upcoming-exh-slider ul').before('<p id="num-nav2" class="num-nav">').cycle({
+            timeout: 5000,
+            pager: '#num-nav2'
+        });
+        $('.online-exh-slider ul').before('<p id="num-nav3" class="num-nav">').cycle({
+            timeout: 8000,
+            pager: '#num-nav3'
+        });
+        $('.choice-exh-slider ul').before('<p id="num-nav4" class="num-nav">').cycle({
+            timeout: 8000,
+            pager: '#num-nav4'
+        });
+
+        hoverMask(".slider-content li, .rec-exh-video-list li");
+    });
+</script>
+<div id="content">
+    <div class="collection-details clearfix" style="position:relative;padding-bottom:60px">
+        <div align="center" id="image-holder"><div class="image-details" id="image-details" title="${data.title}" style="width: 936px;">
+            <img id="mimg" src="${data.mappath}" style="cursor: pointer;max-width: 936px">
+            <span class="work-large-icon" style="cursor: pointer; left: 159px; display: inline;"></span>
+            <div class="work-close-icon" id="close" title="关闭放大镜"></div></div></div>
+        <div class="works-info" id="works-info" style="width: 928px;">
+            <div class="info">
+                <h2 style="line-height:20px">${data.title}</h2>
+                <p>作者：${data.author}</p>
+                <p>创作年代：${data.createtime}</p>
+                <p>规格：${data.size}cm</p>
+                <p>材质：${data.texture}</p>
+            </div>
+            #{if data.remark}
+            <div class="text">
+                作品简介:<br><div class="Custom_UnionStyle"><p>　${data.remark}　</p></div>
+            </div>
+            #{/if}
+
+
+            <!-- Baidu Button BEGIN -->
+            <div class="share-list-pic" style="position:absolute;right:20px;bottom:15px">
+                <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+                    <a class="bds_tsina" title="分享到新浪微博" href="#"></a>
+                    <a class="bds_tqq" title="分享到腾讯微博" href="#"></a>
+                    <a class="bds_renren" title="分享到人人网" href="#"></a>
+                    <a class="bds_kaixin001" title="分享到开心网" href="#"></a>
+                    <a class="bds_qzone" title="分享到QQ空间" href="#"></a>
+                    <a class="bds_tsohu" title="分享到搜狐微博" href="#"></a>
+                    <a class="bds_fbook" title="分享到Facebook" href="#"></a>
+                    <span class="bds_more">更多</span>
+                </div>
+            </div>
+            <!-- Baidu Button END -->
+        </div>
+    </div>
+</div>

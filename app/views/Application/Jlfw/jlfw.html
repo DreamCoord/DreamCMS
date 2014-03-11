@@ -1,0 +1,117 @@
+#{extends './jlfw_model.html'/}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        tabs(".open-date-wrap, .floor-plan-wrap");
+
+        $(".fs-wrap .inner .scroll-wrap").cycle({
+            auto: 1,
+            speed: 500,
+            fx: 'scrollHorz',
+            prev: '#prev-btn',
+            next: '#next-btn',
+            timeout: 4000
+        });
+        if (window.location.hash && window.location.hash.length > 1) {
+            var hash = window.location.hash.substring(1);
+            if ($(".tabs-nav:first li[key='" + hash + "']").length > 0) {
+                $(".tabs-nav:first li[key='" + hash + "']").click();
+            } else if (hash == "hall") {
+                $(".tool-btns .hall-btn").click(function () {
+                    var toKey = $(".floor-plan-wrap:first");
+                    if (toKey.length > 0) {
+                        var animatePx = toKey.offset().top;
+                        if (animatePx && animatePx > 50) {
+                            $('html,body').animate(
+                                    { scrollTop: (animatePx - 50) + 'px' }, 600
+                            );
+                            return false;
+                        }
+                    }
+                });
+                $(".tool-btns .hall-btn").click();
+            } else if (hash == "mobile") {
+                var toKey = $(".mobile-museum:first");
+                if (toKey.length > 0) {
+                    var animatePx = toKey.offset().top;
+                    if (animatePx && animatePx > 50) {
+                        $('html,body').animate(
+                                { scrollTop: (animatePx - 50) + 'px' }, 600
+                        );
+                        return false;
+                    }
+                }
+            }
+        }
+        $(".shop-btn").click(function () {
+            $(".tabs-nav:first li[key='online-booking']").click();
+        });
+
+        if ($.browser.msie && $.browser.version < 9) {
+            $(".online-booking-table tr:even").addClass("even");
+        }
+
+        $.s_t();
+        $(".forgot-password-btn").click(function () {
+            $(".reserve, .register").hide();
+            $(".forgot-password").show();
+
+        });
+        $(".register-btn").click(function () {
+            $(".reserve, .forgot-password").hide();
+            $(".register").show();
+        });
+        $(".back-btn").click(function () {
+            $(".forgot-password, .register").hide();
+            $(".reserve").show();
+        });
+    });
+</script>
+
+<div id="content" class="clearfix">
+    <div class="open-date-wrap news-bulletin news-rec-list-wrap">
+        <div class="title2">
+            <h2>活动预告</h2>
+        </div>
+        <div class="inner">
+            ${hdyg.raw()}
+
+
+        </div>
+    </div>
+    <div class="open-date-wrap news-bulletin news-rec-list-wrap ">
+        <div class="title2">
+            <h2>最新问卷</h2>
+        </div>
+        <div class="inner">
+            ${zxwj.raw()}
+        </div>
+    </div>
+    <div class="rec-art-shop-wrap mobile-museum">
+        <div class="title2">
+            <h2>掌上墨缘798</h2>
+        </div>
+        <div class="inner clearfix">
+            <p class="image">
+                <img src="@{'/public/Theme/images/mobile_museum.png'}" data-pinit="registered">
+                <a href="" target="_blank">
+                    <img class="iphone-qc" src="@{'/public/Theme/images/iphone_qc.jpg'}" data-pinit="registered">
+                </a>
+                <a href="">
+                    <img class="android-qc" src="" data-pinit="registered">
+                </a>
+            </p>
+            <div class="text">
+                <p class="t-i">
+                    墨缘798授权潍坊博锐科技有限公司设计开发，是您浏览墨缘798的随手好帮手：<br>
+                    -&nbsp;可查看墨缘798展览介绍，展品美图；<br>
+                    -&nbsp;墨缘798展览预告、展览回顾等；<br>
+                    -&nbsp;墨缘798重点藏品图片及介绍；<br>
+                    -&nbsp;中国美术馆最新动态及业界新闻资讯；<br>
+                    -&nbsp;中国美术馆简介、参观须知等使用信息。
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

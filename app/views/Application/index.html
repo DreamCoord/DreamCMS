@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<!-- saved from url=(0021)http://www.namoc.org/ -->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta name="keywords" content = "">
+		<meta name="description" content = "">
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+		<link rel="stylesheet" type="text/css" href="@{'/public/Theme/main/reset.css'}">
+		<link rel="stylesheet" href="@{'/public/Theme/main/layout.css'}" type="text/css">
+		<link rel="stylesheet" href="@{'/public/Theme/main/jquery.ui.datepicker.css'}" type="text/css">
+		<script type="text/javascript" src="@{'/public/Theme/main/jquery.min.js'}"></script>
+		<script type="text/javascript" src="@{'/public/Theme/main/jquery-ui.min.js'}"></script>
+		<script type="text/javascript" src="@{'/public/Theme/main/jquery.common.js'}"></script>
+		<script type="text/javascript" src="@{'/public/Theme/main/trs.common.js'}"></script>
+		<script type="text/javascript" src="@{'/public/Theme/main/jquery.cycle.js'}"></script>
+		<title>墨缘798</title>
+		
+		<style>
+		.are-exh-list .title1{margin: 8px 10px 0px 10px;font-size: 15px;}
+		.house-news-list .title1{margin: 8px 10px 0px 10px;font-size: 15px;}
+		</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.home-slider ul').before('<p id="num-nav1" class="num-nav">').cycle({
+            timeout: 5000,
+            pager: '#num-nav1'
+        });
+
+        $('.are-exh-list .wrap').cycle({
+            auto: 0,
+            speed: 500,
+            fx: 'scrollHorz',
+            prev: '#prev1',
+            next: '#next1',
+            timeout: 4000
+        });
+
+        $('.house-news-list .wrap').cycle({
+            auto: 0,
+            speed: 500,
+            fx: 'scrollHorz',
+            prev: '#prev2',
+            next: '#next2',
+            timeout: 6000
+        });
+
+        $('.rec-wikipedia .wrap').cycle({
+            auto: 0,
+            speed: 500,
+            fx: 'scrollHorz',
+            prev: '#prev3',
+            next: '#next3',
+            timeout: 5000
+        });
+
+        $(".visit-accordion h2:first").addClass("selected");
+        $(".visit-accordion h2.selected").next().show();
+        $(".visit-accordion h2").click(function () {
+            if (!$(this).hasClass("selected")) {
+                $(this).siblings("h2").removeClass("selected")
+                $(this).addClass("selected");
+                $(this).siblings(".panel:visible").slideUp();
+                $(this).next().slideDown();
+            }
+        });
+
+        hoverMask(".rec-box .content");
+        hoverArrow(".house-news-list li")
+
+        var mobile_devices = client.system.iphone || client.system.ipod || client.system.ipad || client.system.android || client.system.nokiaN || client.system.winMobile || client.system.macMobile || client.system.wii || client.system.ps;
+        if (!mobile_devices) {
+            $("#navigation > li > a").mouseover(function () {
+                if ($(this).next().length)
+                    $(this).parent().addClass("hover");
+            });
+            $("#navigation > li").mouseleave(function () {
+                if ($(this).hasClass("hover"))
+                    $(this).removeClass("hover");
+            });
+        } else {
+            $("#navigation > li > a").click(function () {
+                var $this = $(this);
+                if ($this.next().find("li").length > 0 && !$this.parent().hasClass("hover")) {
+                    $this.parent("li").siblings("li").removeClass("hover");
+                    $this.parent().addClass("hover");
+                    return false;
+                }
+            });
+
+            $("#navigation > li > a, #navigation > li > ul").mouseenter(function () {
+                $("body").unbind("click");
+            });
+            $("#navigation > li > a, #navigation > li > ul").mouseleave(function () {
+                $("body").bind("click", function () {
+                    $("#navigation > li").removeClass("hover");
+                });
+            });
+        }
+
+		$('.rec-box .wrap').cycle({
+			auto: 0,
+			speed: 500,
+			fx: 'scrollHorz',
+			prev: '#prev3',
+			next: '#next3',
+			timeout: 5000
+		});
+    });
+</script>
+
+	</head>
+    <body id="home-page" style="display: block;" huaban_screen_capture_injected="true">
+    <div id="container">
+    <div id="header">
+        <div class="exh-slider-wrap home-slider">
+            <div class="slider-content">
+                <p id="num-nav1" class="num-nav">
+                </p>
+                <ul>
+                    <li style="position: absolute; top: 0px; left: 0px; display: none; z-index: 3; opacity: 0;">
+                        <a href="" target="_blank">
+                            <img src="@{'/public/Theme/sys/sylogo/W020131216363124360283.jpg'}" alt="网站大广告 03"
+                                 width="960" height="500" border="0/" data-pinit="registered">
+                            <!--<div class="text">-->
+                            <!--<div class="exh-text-home">-->
+                            <!--<div class="exh-text">-->
+                            <!--<span class="time"></span>-->
+                            <!--<h2>2013.12.19 - 2013.12.26</h2>-->
+                            <!--<h3>工·在当代——2013第九届中国工笔画大展</h3>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                        </a>
+                    </li>
+                    <li style="position: absolute; top: 0px; left: 0px; display: none; z-index: 3; opacity: 0;">
+                        <a href="" target="_blank">
+                            <img src="@{'/public/Theme/sys/sylogo/W020131203606281286112.jpg'}" alt="网站大广告 01"
+                                 width="960" height="500" border="0/" data-pinit="registered">
+                        </a>
+                    </li>
+                    <li style="position: absolute; top: 0px; left: 0px; display: block; z-index: 4; opacity: 1;">
+                        <a href="" target="_blank">
+                            <img src="@{'/public/Theme/sys/sylogo/W020131113378919895592.jpg'}" alt="网站大广告 1103"
+                                 width="960" height="500" border="0/" data-pinit="registered">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="head">
+            <h1 id="logo">
+                <a href="./">
+                    <img src="@{'/public/Theme/images/logo.png'}">
+                </a>
+            </h1>
+            <ul id="navigation">
+                <li class="nav-home">
+                    <a href="@{Application.index()}">
+                        首页
+                    </a>
+                </li>
+                <li class="nav-news">
+                    <a href="./news" target="_self" style="text-decoration: none;">
+                        新闻资讯
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="/news/tzgg" target="_self" style="text-decoration: none;">
+                                通知公告
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/news/yjdt" target="_self" style="text-decoration: none;">
+                                业界动态
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/news/jdzt" target="_self" style="text-decoration: none;">
+                                新闻专题
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-show">
+                    <a href="./mjmz" target="_self" style="text-decoration: none;">
+                        名家名作
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="/mjmz/zzml" target="_self" style="text-decoration: none;">
+                                作者名录
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/mjmz/zpzs" target="_self" style="text-decoration: none;">
+                                作品展示
+                            </a>
+                        </li>
+                        <!--<li><a href="/mjmz/zxzl" target="_self" style="text-decoration: none;">在线展览</a></li>-->
+                    </ul>
+                </li>
+                <li class="nav-spread">
+                    <a href="./jlfw" target="_self" style="text-decoration: none;">
+                        交流服务
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="/jlfw/zzjj" target="_self" style="text-decoration: none;">
+                                组织简介
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/jlfw/yjfk" target="_self" style="text-decoration: none;">
+                                意见反馈
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/jlfw/wldc" target="_self" style="text-decoration: none;">
+                                网络调查
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-swap">
+                    <a href="./tzsc" target="_self" style="text-decoration: none;">
+                        投资收藏
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="/tzsc/tzsz" target="_self" style="text-decoration: none;">
+                                投资升值
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://shop108055118.taobao.com" target="_blank" style="text-decoration: none;">
+                                艺术商店
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-support">
+                    <a href="./hzzc" target="_self" style="text-decoration: none;">
+                        合作支持
+                    </a>
+                    <ul>
+                        <!--<li><a href="/zcwm/scyjzzd/" target="_self" style='text-decoration: none;'>收藏与捐赠</a></li>-->
+                        <li>
+                            <a href="/hzzc/hzfs" target="_self" style="text-decoration: none;">
+                                合作方式
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/hzzc/lxwm" target="_self" style="text-decoration: none;">
+                                联系我们
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/hzzc/jzwm" target="_self" style="text-decoration: none;">
+                                捐赠我们
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="share-login">
+                <a href="#" id="bdshare" class="share-btn-cn bdshare_b">
+                    分享
+                </a>
+                |
+                    <span id="userinfo">
+                        <a href="/admin/login" class="login-btn" target="_blank">
+                            登录
+                        </a>
+                        |
+                        <a href="/admin/register" class="register-btn" target="_blank">
+                            注册
+                        </a>
+                        |
+                    </span>
+                <a href="http://www.namoc.org/en/" target="_blank">
+                    会员服务
+                </a>
+            </p>
+        </div>
+    </div>
+    <div id="content" class="clearfix">
+    <div class="main-col">
+    <div class="clearfix">
+        <div class="house-news-list">
+            <h2 class="title1" style="float:left;display:inline;">
+                <a href="./xwdt">
+                    新闻
+                </a>
+                /
+                <a href="./tzgg">
+                    公告
+                </a>
+            </h2>
+            <h2 class="title1" style="float:right;display:inline; ">
+                <a href="@{New.index()}">
+                    更多
+                </a>
+            </h2>
+            <div class="slider-scoll-wrap" style="float:left">
+                <div class="wrap" style="overflow: hidden;">
+                    <div class="panel" style="position: absolute; top: 0px; left: -383px; display: none; z-index: 2; opacity: 1;">
+                        <div class="inner">
+                            <ul>
+                                <!--<li><a href="./xwzx/xw/2013/201312/t20131209_271931.htm" title="&quot;北京神韵——重大历史题材中国山水画展&quot;启幕" style="text-decoration: none;">${name}</a>-->
+                                <!--[13-12-09]</li>-->
+                                #{list items:news1, as:'account' }
+                                <li>
+                                    <a href="@{New.pages(account.id)}">
+                                        ${account.title}
+                                    </a>
+                                    [${account.time}]
+                                </li>
+                                #{/list}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 3; opacity: 1;">
+                        <div class="inner">
+                            <ul>
+                                #{list items:news2, as:'account' }
+                                <li>
+                                    <a href="${account.id}">
+                                        ${account.title}
+                                    </a>
+                                    [${account.time}]
+                                </li>
+                                #{/list}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <p class="btns">
+                    <a id="prev2" class="prev-btn" href="#">
+                                    <span>
+                                    </span>
+                    </a>
+                    <a id="next2" class="next-btn" href="#">
+                                    <span>
+                                    </span>
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="are-exh-list">
+            <h2 class="title1" style="float:left;display:inline;">
+                <a href="http://www.namoc.org/zsjs/zlzx/">
+                    作者名录
+                </a>
+            </h2>
+            <h2 class="title1" style="float:right;display:inline; ">
+                <a href="@{Mjmz.zzml()}">
+                    更多
+                </a>
+            </h2>
+            <div class="slider-scoll-wrap" style="float:left">
+                #{list items:allMember, as:'data' }
+                <div class="wrap" style="overflow: hidden;">
+                    <div class="panel" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 3; opacity: 1;">
+                        <div class="inner">
+                            <ul id="jqzl1">
+                                <li>
+                                    <p class="image">
+                                        <a href="" target="_blank">
+                                            <img src="${data.mappath}" style="float: left;width: 120px;height: 120px;overflow: hidden; }"
+                                                 data-pinit="registered">
+                                        </a>
+                                    </p>
+                                    <div class="text" style="font-size: 13px;color: #535353;float: right;width: 202px;padding: 8px 10px 0 0;">
+                                        <h2>
+                                            ${data.name}
+                                        </h2>
+                                        <p>
+                                            简介：${data.remark}
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                #{/list}
+                <p class="btns">
+                    <a id="prev1" class="prev-btn" href="#">
+                                    <span>
+                                    </span>
+                    </a>
+                    <a id="next1" class="next-btn" href="#">
+                                    <span>
+                                    </span>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">
+        <div class="rec-box">
+            <div class="content">
+                <a href="@{Mjmz.zpzs()}" target="_blank">
+                    <img src="@{'/public/Theme/sys/syzxzl/W020131227520051845973.jpg'}" data-pinit="registered"
+                         width="191" height="191">
+                    <h2 class="title normal">
+                        作品展示
+                    </h2>
+                </a>
+            </div>
+        </div>
+        <div class="rec-box">
+            <div class="content">
+                <a href="@{Mjmz.zxzl()}" target="_blank">
+                    <img src="@{'/public/Theme/sys/syzxzl/W020131227519711381036.jpg'}" data-pinit="registered"
+                         width="191" height="191">
+                    <h2 class="title normal">
+                        在线展览
+                    </h2>
+                </a>
+            </div>
+        </div>
+        <div class="rec-box">
+            <div class="content">
+                <a href="@{Jlfw.zzjj()}" target="_blank">
+                    <img src="@{'/public/Theme/sys/syzxzl/W020140110424229823813.jpg'}" width="191"
+                         height="191" data-pinit="registered">
+                    <h2 class="title normal">
+                        组织简介
+                    </h2>
+                </a>
+            </div>
+        </div>
+        <div class="rec-box">
+            <div class="content">
+                <a href="@{Jlfw.yjfk()}" target="_blank">
+                    <img src="@{'/public/Theme/sys/syzxzl/W020131227519069971144.jpg'}" width="191"
+                         height="191" data-pinit="registered">
+                    <h2 class="title normal">
+                        意见反馈
+                    </h2>
+                </a>
+            </div>
+        </div>
+        <div class="rec-box">
+            <div class="content">
+                <a href="@{Hzzc.hzfs()}" target="_blank">
+                    <img src="@{'/public/Theme/sys/syzxzl/W020131227518650591004.jpg'}" width="191"
+                         height="191" data-pinit="registered">
+                    <h2 class="title normal">
+                        合作方式
+                    </h2>
+                                <span class="mask" style="width: 191px; height: 191px; top: 0px; left: 0px; opacity: 0.4; display: none;">
+                                </span>
+                </a>
+            </div>
+        </div>
+        <div class="rec-box">
+            <div class="content">
+                <a href="@{Hzzc.lxwm()}" target="_blank">
+                    <img src="@{'/public/Theme/sys/syzxzl/W020131227518284193135.jpg'}" data-pinit="registered"
+                         width="191" height="191">
+                    <h2 class="title normal">
+                        联系我们
+                    </h2>
+                </a>
+            </div>
+        </div>
+        <div class="rec-box">
+            <div class="content">
+                <a href="http://shop108055118.taobao.com" target="_blank">
+                    <img src="@{'/public/Theme/sys/syzxzl/W020131227517527788545.jpg'}" width="191"
+                         height="191" data-pinit="registered">
+                    <h2 class="title normal">
+                        艺术商店
+                    </h2>
+                </a>
+            </div>
+        </div>
+        <div class="rec-box">
+            <div class="content">
+                <a href="jlfw#mobile" target="_blank">
+                    <img src="@{'/public/Theme/sys/syzxzl/W020131227516389190998.jpg'}" data-pinit="registered"
+                         width="191" height="191">
+                    <h2 class="title normal">
+                        掌上墨缘
+                    </h2>
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="side-col">
+        <div class="rec-visit">
+            <iframe width="100%" height="382" class="share_self" frameborder="0" scrolling="no"
+                    src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=382&fansRow=1&ptype=1&speed=100&skin=8&isTitle=0&noborder=0&isWeibo=1&isFans=1&uid=3926184699&verifier=a9695dfa&colors=ded8c3,ded8c3,666666,0082cb,ded8c3&dpc=1">
+            </iframe>
+        </div>
+        <div class="rec-box">
+            <div class="content">
+                <a href="" target="_blank">
+                    <img src="@{'/public/Theme/images/qr.jpg'}" width="191" height="191" data-pinit="registered">
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="@{'/public/Theme/main/site_bottom.js'}">
+    </script>
+    </div>
+    </body>
+</html>

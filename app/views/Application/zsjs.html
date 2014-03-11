@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta name="keywords" content = "">
+		<meta name="description" content = "">
+		<link rel="stylesheet" type="text/css" href="./main/reset.css">
+		<link rel="stylesheet" href="./main/layout.css" type="text/css">
+		<link rel="stylesheet" href="./main/jquery.ui.datepicker.css" type="text/css">
+		<script type="text/javascript" src="./main/jquery.min.js"></script>
+		<script type="text/javascript" src="./main/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="./main/jquery.common.js"></script>
+		<script type="text/javascript" src="./main/trs.common.js"></script>
+		<script type="text/javascript" src="./main/jquery.cycle.js"></script>
+		<title>墨缘798</title>
+		
+		<style>
+		.are-exh-list .title1{margin: 8px 10px 0px 10px;font-size: 15px;}
+		.house-news-list .title1{margin: 8px 10px 0px 10px;font-size: 15px;}
+		</style>
+		<script type="text/javascript">
+    $(document).ready(function() {
+        $('.news-rec-slider ul').before('<p id="num-nav1" class="num-nav">').cycle({
+            timeout: 5000,
+            pager: '#num-nav1'
+        });
+		
+		$('.rec-pic-scroll-wrap .wrap').cycle({
+			auto: 1,
+			speed: 500,
+			fx: 'scrollHorz',
+			prev: '#prev1',
+			next: '#next1',
+			timeout: 4000
+		});
+
+
+        $(".rec-pic-scroll-wrap li").each(function (index) {
+            $(this).find("a[rel^=works]").fancybox({
+                'transitionIn': 'block',
+                'transitionOut': 'block',
+                'titlePosition': 'over',
+                'titleFormat': function (title, currentArray, currentIndex, currentOpts) {
+                    return '<span class="fancybox-title-over-group">' + (title.length ? '' + title : '') + '</span>';
+                }
+            });
+        });
+		 $('.rec-magazine-wrap .inner').cycle({
+			auto: 1,
+			speed: 1000,
+			fx: 'scrollHorz',
+			prev: '#prev1',
+			next: '#next1',
+			timeout: 4000,
+            cleartypeNoBg: true
+		});
+		
+        /*
+		$(".rec-magazine-wrap .content").hScrollPane({
+			mover:"ul",
+			moverW:function(){return $(".rec-magazine-wrap li").length * 170;}(),
+			showArrow:true,
+			handleCssAlter:"draghandlealter",
+			mousewheel:{moveLength:207}
+		});
+        */
+        hoverMask(".slider-content li");
+        hoverMask(".clearfix .image, .rec-exh-video-list li, .rec-pic-scroll-wrap li");
+    });
+</script>
+
+	</head>
+	<body id="home-page" style="display: block;" huaban_screen_capture_injected="true">
+		<div id="container">
+		<script src="./main/site_top.js">
+		</script>
+
+		<div class="current-location-wrap">
+			<p class="current-location">
+				<a href="../" style="color:#ffffff" class="CurrChnlCls">
+					首页
+				</a>
+				&gt;
+				<a href="./" style="color:#ffffff" class="CurrChnlCls">
+					新闻资讯
+				</a>
+			</p>
+			<p class="sub-nav">
+				<a href="./tzgg/">
+					通知公告
+				</a>
+				|
+				<a href="./xw/">
+					新闻
+				</a>
+				|
+				<a href="./yjdt/">
+					业界动态
+				</a>
+				|
+				<a href="./gjzx/">
+					国际展讯
+				</a>
+				|
+				<a href="./tpxw/">
+					图片新闻
+				</a>
+				|
+				<a href="./jdzt/">
+					焦点专题
+				</a>
+				|
+				<a href="./hzmt/">
+					合作媒体
+				</a>
+			</p>
+		</div>
+		<div id="content">
+			<div class="clearfix">
+				<div class="n-main-col">
+					<div class="exh-slider-wrap news-rec-slider">
+						<div class="slider-content">
+							<p id="num-nav1" class="num-nav">
+								<a href="#" class="">
+									1
+								</a>
+								<a href="#" class="active-slide">
+									2
+								</a>
+								<a href="#" class="">
+									3
+								</a>
+							</p>
+							<ul>
+								<li style="position: absolute; top: 0px; left: 0px; display: none; z-index: 3; opacity: 0;">
+									<a href="http://www.namoc.org/xwzx/xw/2013/201312/t20131204_271884.htm"
+									target="_blank">
+										<img src="./sys/sylogo/W020131205338944097432.jpg" style="width:560px; height:418px; border:0px;"
+										data-pinit="registered">
+									</a>
+									<div class="text">
+										<div style="padding-right:13px;">
+											<p class="date" style="color:#9fd9c4">
+												新闻
+											</p>
+											<h3 style="color:#FFFFFF;width:100%">
+												苏国伟漆画呈现福建地域的人文景观
+											</h3>
+										</div>
+									</div>
+								</li>
+								<li style="position: absolute; top: 0px; left: 0px; display: block; z-index: 4; opacity: 1;">
+									<a href="http://www.namoc.org/xwzx/xw/2013/201311/t20131123_271517.htm"
+									target="_blank">
+										<img src="./sys/sylogo/W020131124727289401307.jpg" style="width:560px; height:418px; border:0px;"
+										data-pinit="registered">
+										<span class="mask" style="width: 560px; height: 418px; top: 0px; left: 0px; opacity: 0.4; display: none;">
+										</span>
+									</a>
+									<div class="text">
+										<div style="padding-right:13px;">
+											<p class="date" style="color:#9fd9c4">
+												新闻
+											</p>
+											<h3 style="color:#FFFFFF;width:100%">
+												20世纪中国美术之旅：走向西部——中国美术馆馆藏精品展
+											</h3>
+										</div>
+									</div>
+								</li>
+								<li style="position: absolute; top: 0px; left: 0px; display: none; z-index: 3; opacity: 0;">
+									<a href="http://www.namoc.org/xwzx/xw/2013/201311/t20131122_271515.htm"
+									target="_blank">
+										<img src="./sys/sylogo/W020131123302408438746.jpg" style="width:560px; height:418px; border:0px;"
+										data-pinit="registered">
+									</a>
+									<div class="text">
+										<div style="padding-right:13px;">
+											<p class="date" style="color:#9fd9c4">
+												新闻
+											</p>
+											<h3 style="color:#FFFFFF;width:100%">
+												国家近现代美术研究中心学术研究展"'85与一所艺术学府"启幕
+											</h3>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="news-rec-list-wrap news-house">
+						<div class="title t-s-bc1">
+							<h2>
+								焦点专题
+							</h2>
+						</div>
+						<div class="inner">
+							<div class="clearfix">
+								<p class="image">
+									<a href="http://www.namoc.org/xwzx/zt/zhysz/">
+										<img src="./jdzt/201311/W020131126535451909166.jpg" style="width:150px; height:150px; border:0px;"
+										data-pinit="registered">
+										<span class="text">
+											<em class="overlay">
+											</em>
+											<span title="厚土人文——钟涵艺术展">
+												厚土人文——钟涵...
+											</span>
+										</span>
+									</a>
+								</p>
+								<ul class="list">
+									<li>
+										<a href="http://www.namoc.org/xwzx/zt/zhysz/" target="_blank" title="厚土人文——钟涵艺术展"
+										style="text-decoration: none;">
+											厚土人文——钟涵艺术展
+										</a>
+										<span>
+											[13-11-26]
+										</span>
+									</li>
+									<li>
+										<a href="http://www.namoc.org/xwzx/zt/ggfwnh/" target="_blank" title="2013&quot;志愿者与美术馆公共文化服务&quot;年会暨&quot;美术馆志愿者管理&quot;工作坊"
+										style="text-decoration: none;">
+											2013"志愿者与美术馆公共文化服务"年会...
+										</a>
+										<span>
+											[13-11-07]
+										</span>
+									</li>
+									<li>
+										<a href="http://www.namoc.org/xwzx/zt/jhsx/" target="_blank" title="交互视象——2013海峡两岸当代艺术展"
+										style="text-decoration: none;">
+											交互视象——2013海峡两岸当代艺术展
+										</a>
+										<span>
+											[13-10-10]
+										</span>
+									</li>
+									<li>
+										<a href="http://www.namoc.org/xwzx/zt/lxdsl/" target="_blank" title="二十世纪中国美术之旅——留学到苏联"
+										style="text-decoration: none;">
+											二十世纪中国美术之旅——留学到苏联
+										</a>
+										<span>
+											[13-08-15]
+										</span>
+									</li>
+									<li>
+										<a href="http://www.namoc.org/xwzx/zt/qxfzt/" target="_blank" title="抱朴自然——秦宣夫艺术展"
+										style="text-decoration: none;">
+											抱朴自然——秦宣夫艺术展
+										</a>
+										<span>
+											[13-06-28]
+										</span>
+									</li>
+									<li>
+										<a href="http://www.namoc.org/xwzx/zt/gqzt/index.htm" target="_blank"
+										title="与时代同行——中国美术馆建馆50周年成就展" style="text-decoration: none;">
+											与时代同行——中国美术馆建馆50周年成就展
+										</a>
+										<span>
+											[13-05-24]
+										</span>
+									</li>
+								</ul>
+							</div>
+							<p class="more-box">
+								<a href="./jdzt/">
+									更多...
+								</a>
+							</p>
+						</div>
+					</div>
+					<div class="rec-pic-scroll-wrap">
+						<div class="inner">
+							<div class="wrap" style="overflow: hidden;">
+								<div class="panel" style="position: absolute; top: 0px; left: -530px; display: none; z-index: 3; opacity: 1;">
+									<ul class="clearfix">
+										<li>
+											<a href="./tpxw/2013/201311/W020131126570025185490.jpg" rel="works271571"
+											workstitle="钟涵先生接受范迪安馆长颁发的捐赠证书。">
+												<img src="./tpxw/2013/201311/P020131126570023304149.jpg" style="width:175px; height:179px;"
+												data-pinit="registered">
+												<span class="text">
+													<em class="overlay">
+													</em>
+													<span title="厚土人文：钟涵艺术展">
+														厚土人文：钟涵艺术展
+													</span>
+												</span>
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131126570025349285.jpg"
+											rel="works271571" workstitle="“大河上下”意为天地时空间的长河。该篇章作为展览最重要的部分囊括了钟涵先生反映壮阔生活意义的黄河主题创作，如《东渡黄河》、《密云》、《饮河者》、《望中犹记，晚潮明处》等。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131126570025499024.jpg"
+											rel="works271571" workstitle="本次展览是钟涵先生从艺60周年展览，全面呈现钟涵先生的艺术成就。图为1号展厅现场。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131126570025650804.jpg"
+											rel="works271571" workstitle="在“大河上下”篇章的展厅现场，一些观众在阅读钟涵先生的艺术年表。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131126570025653366.jpg"
+											rel="works271571" workstitle="为了创作《沿河边上》，钟涵先生收集素材的同时，绘制了大量毛主席肖像，这些肖像速写也在本次展览中呈现。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131126570025802740.jpg"
+											rel="works271571" workstitle="钟涵先生创作于1963年的《沿河边上》。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131126570025962859.jpg"
+											rel="works271571" workstitle="钟涵先生创作于1999年的《沿河边上》，尺寸较原作略小。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131126570026123760.jpg"
+											rel="works271571" workstitle="为了使观众深入了解钟涵先生的创作状态，展厅里搭建起了画室的一角，里面摆放着几幅钟涵先生的画作还原了画家的工作场景。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131126570026122367.jpg"
+											rel="works271571" workstitle="钟涵先生创作于1995年的《雨天里的画室来鸽》。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131126570026272445.jpg"
+											rel="works271571" workstitle="钟涵先生创作于2006-2007年的油画《尘暴域之履涉》，这件作品在“人文视像”篇章里呈现。">
+											</a>
+										</li>
+										<li>
+											<a href="./tpxw/2013/201311/W020131124724033781018.jpg" rel="works271519"
+											workstitle="“走向西部”中国美术馆馆藏精品展展厅入口处的地图展示出艺术家们西行的足迹">
+												<img src="./tpxw/2013/201311/P020131124722806438173.jpg" style="width:175px; height:179px;"
+												data-pinit="registered">
+												<span class="text">
+													<em class="overlay">
+													</em>
+													<span title="" 走向西部 "馆藏精品展"="">
+														"走向西部"馆藏精品展
+													</span>
+												</span>
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131124722808628792.jpg"
+											rel="works271519" workstitle="观众观看展墙上吴作人西行戈壁的照片等文献">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131124722808622705.jpg"
+											rel="works271519" workstitle="观众在靳尚谊作品《塔吉克新娘》前留影">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131124722808786702.jpg"
+											rel="works271519" workstitle="观众在李焕民进藏写生文献前阅读">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131124722808931421.jpg"
+											rel="works271519" workstitle="观众在石鲁中国画《古长城外》前欣赏">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131124722809090161.jpg"
+											rel="works271519" workstitle="观众在吴作人作品《巴安孩子》前欣赏">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131124722809092475.jpg"
+											rel="works271519" workstitle="第三部分“寻源拓进”展厅">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131124722809241740.jpg"
+											rel="works271519" workstitle="观众在作品前留影">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131124722809404603.jpg"
+											rel="works271519" workstitle="展厅中叶浅予《西北速写》组画">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131124722809560359.jpg"
+											rel="works271519" workstitle="展厅一角（一）">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131124722809711810.jpg"
+											rel="works271519" workstitle="展厅一角（二）">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131124722809719085.jpg"
+											rel="works271519" workstitle="“走向西部”中国美术馆馆藏精品展新闻发布会现场记者提问">
+											</a>
+										</li>
+										<li>
+											<a href="./tpxw/2013/201311/W020131124702183315220.jpg" rel="works271518"
+											workstitle="中国美术馆馆长范迪安、中国美术学院院长许江与观众合影">
+												<img src="./tpxw/2013/201311/P020131124702181126937.jpg" style="width:175px; height:179px;"
+												data-pinit="registered">
+												<span class="text">
+													<em class="overlay">
+													</em>
+													<span title="'85与一所艺术学府">
+														'85与一所艺术学府
+													</span>
+												</span>
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131124702183468473.jpg"
+											rel="works271518" workstitle="中国美术学院院长许江与观众一同观看展柜中的文献资料">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131124702183626257.jpg"
+											rel="works271518" workstitle="别具一格的展厅设置多维度再现那场艺术思潮">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131124702183788992.jpg"
+											rel="works271518" workstitle="展墙设用多媒体播放窗口观众可以配戴现场准备的耳机来观赏视频">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131124702183786949.jpg"
+											rel="works271518" workstitle="中国美术学院版画系制作的黑板报">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131124702183938725.jpg"
+											rel="works271518" workstitle="观众在观看视频">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131124702184094386.jpg"
+											rel="works271518" workstitle="嘉宾在观看展柜中的文献资料">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131124702184242885.jpg"
+											rel="works271518" workstitle="观众在实验水墨展区观赏">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131124702184403922.jpg"
+											rel="works271518" workstitle="展厅一角">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131124702184562819.jpg"
+											rel="works271518" workstitle="新闻发布会暨展览研讨会现场，来自各界的艺术家、批评家一同展开‘85与中国美术学院关系与意义的讨论">
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="panel" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 4; opacity: 1;">
+									<ul class="clearfix">
+										<li>
+											<a href="./tpxw/2013/201311/W020131120397544214615.jpg" rel="works271316"
+											workstitle="俄罗斯各博物馆馆长、文化官员等与观众一同出席展览开幕式">
+												<img src="./tpxw/2013/201311/P020131120398779681623.jpg" style="width:175px; height:179px;"
+												data-pinit="registered">
+												<span class="text">
+													<em class="overlay">
+													</em>
+													<span title="" 大器 '玩'成 "亮相俄罗斯"="">
+														"大器'玩'成"亮相俄罗斯
+													</span>
+												</span>
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131120397544371497.jpg"
+											rel="works271316" workstitle="策展人叶卡捷琳娜女士（右二）主持开幕式，中国美术馆副馆长谢小凡先生（右三）、中国驻俄罗斯大使馆公使銜参赞张中华女士（右一）出席开幕式">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131120397544535184.jpg"
+											rel="works271316" workstitle="在展览开幕式现场中国美术馆副馆长谢小凡放飞折纸飞机">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131120397544689408.jpg"
+											rel="works271316" workstitle="中国代表团一行与马涅士博物馆--展览联合体工作人员交流讨论展览相关事宜">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131120397544847053.jpg"
+											rel="works271316" workstitle="新闻发布会现场">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131120397545003652.jpg"
+											rel="works271316" workstitle="新闻发布会现场多家中俄两国知名媒体记者借此次玩具展就了解中国玩具艺术和中国传统文化提问">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131120397545151190.jpg"
+											rel="works271316" workstitle="展厅入口处">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131120397545313853.jpg"
+											rel="works271316" workstitle="展厅入口处悬挂的风筝龙和宫灯迎接来访观众">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131120397545312295.jpg"
+											rel="works271316" workstitle="儿童在展览设立的互动区玩耍">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131120397545465086.jpg"
+											rel="works271316" workstitle="俄罗斯观众在《兔爷儿》前留影">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131120397545937242.jpg"
+											rel="works271316" workstitle="观众在泥塑《三国》前留影">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131120397546090339.jpg"
+											rel="works271316" workstitle="一位俄罗斯观众在展览现场吹动风车">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131120397546259926.jpg"
+											rel="works271316" workstitle="叶卡捷琳娜女士在《状元骑马》前讲解">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131120401723436142.jpg"
+											rel="works271316" workstitle="观众在放映厅观看关于玩具的故事">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131120397546258938.jpg"
+											rel="works271316" workstitle="现场展品 北京 韩增启  泥塑《三国》">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131120397546403250.jpg"
+											rel="works271316" workstitle="现场展品 江苏无锡 喻湘涟、王南仙  泥塑《大闹天宫》">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131120397546567268.jpg"
+											rel="works271316" workstitle="展览《启智》部分">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131120397546716657.jpg"
+											rel="works271316" workstitle="展览《希冀》部分">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131120397546871789.jpg"
+											rel="works271316" workstitle="展厅一角">
+											</a>
+										</li>
+										<li>
+											<a href="./tpxw/2013/201311/W020131119413922340030.jpg" rel="works271279"
+											workstitle="蒋采蘋女士在从艺60周年画展的开幕式中致答谢词。">
+												<img src="./tpxw/2013/201311/P020131119413920622758.jpg" style="width:175px; height:179px;"
+												data-pinit="registered">
+												<span class="text">
+													<em class="overlay">
+													</em>
+													<span title="蒋采蘋从艺60周年画展">
+														蒋采蘋从艺60周年画展
+													</span>
+												</span>
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131119413922501817.jpg"
+											rel="works271279" workstitle="在本次展览中，蒋采蘋女士将创作于1991年的《宋庆龄光辉一生》系列捐赠给中国美术馆，图为马书林副馆长向蒋采蘋女士颁发捐赠证书。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131119413922653430.jpg"
+											rel="works271279" workstitle="蒋采蘋女士将这次展出的《叶浅予先生》《教室》《老芭蕉与小芭蕉》捐赠给中央美术学院美术馆。开幕式上，央美美术馆馆长王璜生向蒋采蘋颁发收藏证书。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131119413922815791.jpg"
+											rel="works271279" workstitle="开幕式上，蒋采蘋女士与嘉宾们的合影。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131119413922815724.jpg"
+											rel="works271279" workstitle="位于1号展厅的入口处的艺术家简历。里面包含了蒋采蘋从艺以来的重要艺术活动，使观众在欣赏作品的同时更加了解作者的艺术经历。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131119413922964898.jpg"
+											rel="works271279" workstitle="1号展厅内陈列的重彩画作品。这些作品是蒋采蘋90年代至今的重要创作，反映了蒋采蘋在艺术道路上的辛勤耕耘成果。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131119413923125023.jpg"
+											rel="works271279" workstitle="在1号展厅重要位置悬挂着蒋采蘋女士的代表作《宋庆龄光辉一生》。展厅现场里，几名观众在欣赏这件作品。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131119413923286867.jpg"
+											rel="works271279" workstitle="在后圆厅部分展示了蒋采蘋女士的小型工笔画，图为一名观众在欣赏蒋采蘋创作于1993年的作品《睡莲》。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131119413923432649.jpg"
+											rel="works271279" workstitle="在蒋采蘋从艺60年展览开幕当天吸引了不少前来参观的人们。蒋采蘋对颜色深有研究，这反映在她的重彩作品中。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131119413923439572.jpg"
+											rel="works271279" workstitle="展览开幕当天1号展厅的盛况。">
+											</a>
+										</li>
+										<li>
+											<a href="./tpxw/2013/201311/W020131119388487812956.jpg" rel="works271277"
+											workstitle="热烈的开幕式现场。图为中国美术馆馆长范迪安在开幕式中致辞。">
+												<img src="./tpxw/2013/201311/P020131119388485784752.jpg" style="width:175px; height:179px;"
+												data-pinit="registered">
+												<span class="text">
+													<em class="overlay">
+													</em>
+													<span title="上海美术进京展">
+														上海美术进京展
+													</span>
+												</span>
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131119388487960984.jpg"
+											rel="works271277" workstitle="开幕式结束后，嘉宾们在展览背景板上留下了自己的名字作为留念。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131119388488124824.jpg"
+											rel="works271277" workstitle="此次上海美术进京展为首都观众带来了上海美术最新的发展成果，图为展览开幕当天的展厅盛况。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131119388488281298.jpg"
+											rel="works271277" workstitle="展览开幕当天，很多来自上海美术界的嘉宾来到展览现场。图为嘉宾们参观展览。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131119388488431269.jpg"
+											rel="works271277" workstitle="在本次展览中，很多作品反映了社会纪实。图为一名观众在欣赏刘曼文的油画《和平——2009》。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131119388488592726.jpg"
+											rel="works271277" workstitle="展厅现场里，于积勇的雕塑《结9603》引起了观众们的兴趣。图为观众用相机记录下这件作品。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131119388488596657.jpg"
+											rel="works271277" workstitle="图为青年艺术家肖敏的雕塑《姿态研究》。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131119388488758696.jpg"
+											rel="works271277" workstitle="展厅内的木质大型雕塑《八月》，该作品为青年艺术家邱加的作品。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131119388488904431.jpg"
+											rel="works271277" workstitle="展出的雕塑《1949——新中国少先队员》。这件作品是陈妍音所创作，作品将观众的思绪带回了特定的历史中。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131119388489066198.jpg"
+											rel="works271277" workstitle="两名观众在欣赏油画作品。">
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="panel" style="position: absolute; top: 0px; left: -530px; display: none; z-index: 3; opacity: 1;">
+									<ul class="clearfix">
+										<li>
+											<a href="./tpxw/2013/201311/W020131118540042964179.jpg" rel="works271263"
+											workstitle="詹鸿昌先生在开幕式中致答谢词。">
+												<img src="./tpxw/2013/201311/P020131118540040787735.jpg" style="width:175px; height:179px;"
+												data-pinit="registered">
+												<span class="text">
+													<em class="overlay">
+													</em>
+													<span title="思念与徘徊：詹鸿昌、陈行画展">
+														思念与徘徊：詹鸿昌、陈行画展
+													</span>
+												</span>
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131118540043121549.jpg"
+											rel="works271263" workstitle="开幕式上，詹鸿昌、陈行与嘉宾们的合影。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131118540043286245.jpg"
+											rel="works271263" workstitle="在展览现场里，我们看到两位艺术家风格迥异。詹鸿昌先生用油画描绘了真实的生活场景，陈行女士则用水墨传达了胸中的无形意象。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131118540043431900.jpg"
+											rel="works271263" workstitle="展览现场的前言部分。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131118540043597937.jpg"
+											rel="works271263" workstitle="图为詹鸿昌先生的《秋色》《北方老汉》《苗姐》等作品。不难看出作者对故土和生活的热爱。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131118540043591623.jpg"
+											rel="works271263" workstitle="展厅现场，陈行女士的大幅抽象麻布水墨画引人注目。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131118540043758067.jpg"
+											rel="works271263" workstitle="两名观众驻足在陈行女士的《母子图》前，这件作品创作于1995年，反映了陈行作为一名女性艺术家的特殊情怀。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131118540043907485.jpg"
+											rel="works271263" workstitle="一名观众在欣赏詹鸿昌先生的油画。在本次展览中，詹鸿昌先生为观众带来了一批乡土气息浓厚、具有现代风格的油画作品。这些作品以身边生活为题材，情感真切令人感动。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131118540044065613.jpg"
+											rel="works271263" workstitle="一名观众在欣赏陈行的麻布水墨系列作品。麻布水墨是陈行多年来在中国画材料领域的探索成果，作者往往以主观即兴的色彩和游动于画面的水墨符号组成不同情绪的现代抽象美感。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131118540044061170.jpg"
+											rel="works271263" workstitle="展览开幕当天，詹鸿昌与陈行的许多老同学赶赴现场献上对二位艺术家的祝贺。图为开幕当天的展厅盛况。">
+											</a>
+										</li>
+										<li>
+											<a href="./tpxw/2013/201311/W020131104380334519373.jpg" rel="works270882"
+											workstitle="书法家李一在展览开幕式致辞">
+												<img src="./tpxw/2013/201311/P020131104402412013510.jpg" style="width:175px; height:179px;"
+												data-pinit="registered">
+												<span class="text">
+													<em class="overlay">
+													</em>
+													<span title="" 艺舟双楫 "李一书法展"="">
+														"艺舟双楫"李一书法展
+													</span>
+												</span>
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131104380334670765.jpg"
+											rel="works270882" workstitle="中国美术馆馆长范迪安致辞">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131104380334836184.jpg"
+											rel="works270882" workstitle="现场嘉宾为李一书法展剪彩">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131104380334830876.jpg"
+											rel="works270882" workstitle="展厅现场观众可以欣赏李一在不同书法载体上的书写">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131104380334981164.jpg"
+											rel="works270882" workstitle="观众在欣赏李一《论书绝句》系列书法作品">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131104380335147834.jpg"
+											rel="works270882" workstitle="李一书写在团扇之上的作品《陶铸》">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131104380335292246.jpg"
+											rel="works270882" workstitle="李一用玉兰叶书写的《日记》、《西游吟》和《美洲记游》">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131104380335297211.jpg"
+											rel="works270882" workstitle="李一章草作品《三联汉画像石拓跋》">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131104380335614081.jpg"
+											rel="works270882" workstitle="展出李一《文心雕龙》札记">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131104380335764547.jpg"
+											rel="works270882" workstitle="展厅中李一书法作品《穷微测妙》">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201311/W020131104381307646322.jpg"
+											rel="works270882" workstitle="李一的书陶作品">
+											</a>
+										</li>
+										<li>
+											<a href="./tpxw/2013/201310/W020131031595305929607.jpg" rel="works270845"
+											workstitle="图为郝鹤君先生在开幕式中致答谢词。">
+												<img src="./tpxw/2013/201310/P020131031595303423455.jpg" style="width:175px; height:179px;"
+												data-pinit="registered">
+												<span class="text">
+													<em class="overlay">
+													</em>
+													<span title="" 大地行踪 "郝鹤君山水画展"="">
+														"大地行踪"郝鹤君山水画展
+													</span>
+												</span>
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201310/W020131031595306085083.jpg"
+											rel="works270845" workstitle="开幕式结束后，郝鹤君与嘉宾们的合影。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201310/W020131031595306230229.jpg"
+											rel="works270845" workstitle="几名观众兴奋地指着郝鹤君先生的简历，对他的创作很感兴趣。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201310/W020131031595306397411.jpg"
+											rel="works270845" workstitle="在展览开篇部分展出了郝鹤君先生的小尺幅山水，图为一名观众在欣赏作《雾社山胞抗日起义纪念碑》，这幅作品创作于1977年。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201310/W020131031595306541387.jpg"
+											rel="works270845" workstitle="郝鹤君先生笔下的山水大气磅礴，图片中，正中央的作品为郝先生创作于2012年的《太行山似海，波澜壮天地》。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201310/W020131031595306706756.jpg"
+											rel="works270845" workstitle="一名观众驻足在作品《黄河之水天上来》前欣赏了很久。郝鹤君在描绘黄河波澜壮阔的同时，添加了一抹淡淡的彩虹，为黄河增添了别样风采。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201310/W020131031595306705450.jpg"
+											rel="works270845" workstitle="观众在欣赏郝鹤君的1997年作于台湾的水墨画《夫妻树》。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201310/W020131031595306863249.jpg"
+											rel="works270845" workstitle="郝鹤君创作于2006年的山水画《东亚之光》，这幅作品描绘了台湾风光。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201310/W020131031595307010436.jpg"
+											rel="works270845" workstitle="展厅内的大型山水画“岭南春雨”，描绘了岭南春意盎然的情景。图为一名观众驻足欣赏。">
+											</a>
+											<a href="http://www.namoc.org/xwzx/tpxw/2013/201310/W020131031595307179424.jpg"
+											rel="works270845" workstitle="这幅名为《铜壁铁墙》的大型山水画是郝鹤君先生对山西梨城黄岩洞的描绘。">
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<a id="prev1" class="btn prev-btn" href="#">
+								<span class="arrow">
+								</span>
+							</a>
+							<a id="next1" class="btn next-btn" href="#">
+								<span class="arrow">
+								</span>
+							</a>
+							<p class="more-box">
+								<a href="./tpxw/">
+									更多图片新闻...
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="n-side-col not-news-list-bg">
+					<div class="news-rec-list-wrap news-bulletin" style="height:112px;">
+						<div class="title t-s-bc2">
+							<h2>
+								通知公告
+							</h2>
+							<p class="icons">
+								<a class="rss-ico" href="#">
+								</a>
+								<a class="twitter-ico" href="#">
+								</a>
+								<a class="facebook-ico" href="#">
+								</a>
+							</p>
+						</div>
+						<div class="inner">
+							<ul class="list">
+								<li>
+									<a href="./tzgg/2013/201307/t20130711_255889.htm" target="_blank" title="关于开展全国公共美术馆建设标准工作调研的通知"
+									style="text-decoration: none;">
+										关于开展全国公共美术馆建设标准工作调研的通知
+									</a>
+									<span>
+										[13-07-11]
+									</span>
+								</li>
+								<li>
+									<a href="./tzgg/2013/201307/t20130708_255844.htm" target="_blank" title="公告：中国美术馆建馆50周年藏品大展结束时间"
+									style="text-decoration: none;">
+										公告：中国美术馆建馆50周年藏品大展结束时间
+									</a>
+									<span>
+										[13-07-08]
+									</span>
+								</li>
+							</ul>
+							<p class="more-box">
+								<a href="./tzgg/2013/" target="_blank">
+									更多...
+								</a>
+							</p>
+						</div>
+					</div>
+					<div class="news-rec-list-wrap news-focus">
+						<div class="title t-s-bc3">
+							<h2>
+								新闻
+							</h2>
+						</div>
+						<div class="inner">
+							<ul class="list">
+								<li>
+									<a href="./xw/2013/201312/t20131209_271931.htm" target="_blank" title="&quot;北京神韵——重大历史题材中国山水画展&quot;启幕"
+									style="text-decoration: none;">
+										"北京神韵——重大历史题材中国山水画展"启幕
+									</a>
+									<span>
+										[13-12-09]
+									</span>
+								</li>
+								<li>
+									<a href="./xw/2013/201312/t20131207_271916.htm" target="_blank" title="崔见中国画：游动笔墨构建的东方风景"
+									style="text-decoration: none;">
+										崔见中国画：游动笔墨构建的东方风景
+									</a>
+									<span>
+										[13-12-07]
+									</span>
+								</li>
+								<li>
+									<a href="./xw/2013/201312/t20131207_271915.htm" target="_blank" title="龚建新中国画展 笔墨勾勒&quot;天山情深&quot;"
+									style="text-decoration: none;">
+										龚建新中国画展 笔墨勾勒"天山情深"
+									</a>
+									<span>
+										[13-12-07]
+									</span>
+								</li>
+								<li>
+									<a href="./xw/2013/201312/t20131206_271912.htm" target="_blank" title="艺术家钟涵教授在中国美术馆与观众亲切对话"
+									style="text-decoration: none;">
+										艺术家钟涵教授在中国美术馆与观众亲切对话
+									</a>
+									<span>
+										[13-12-06]
+									</span>
+								</li>
+								<li>
+									<a href="./xw/2013/201312/t20131206_271911.htm" target="_blank" title="&quot;彩墨情韵&quot;李夜冰画展在中国美术馆开幕"
+									style="text-decoration: none;">
+										"彩墨情韵"李夜冰画展在中国美术馆开幕
+									</a>
+									<span>
+										[13-12-06]
+									</span>
+								</li>
+								<li>
+									<a href="./xw/2013/201312/t20131205_271897.htm" target="_blank" title="中国美术馆&quot;20世纪中国美术之旅 留学到苏联&quot;荣获2013鲁迅文化艺术表现奖"
+									style="text-decoration: none;">
+										中国美术馆"20世纪中国美术之旅 留学到苏联"...
+									</a>
+									<span>
+										[13-12-05]
+									</span>
+								</li>
+								<li>
+									<a href="./xw/2013/201312/t20131205_271891.htm" target="_blank" title="张卫&quot;炫像&quot;演绎传统水墨艺术"
+									style="text-decoration: none;">
+										张卫"炫像"演绎传统水墨艺术
+									</a>
+									<span>
+										[13-12-05]
+									</span>
+								</li>
+							</ul>
+							<p class="more-box">
+								<a href="./xw/" target="_blank">
+									更多...
+								</a>
+							</p>
+						</div>
+					</div>
+					<div class="news-rec-list-wrap news-industry">
+						<div class="title t-s-bc12">
+							<h2>
+								业界动态
+							</h2>
+						</div>
+						<div class="inner">
+							<ul class="list">
+								<li>
+									<a href="./yjdt/dt2013/201312/t20131217_271996.htm" target="_blank" title="&quot;茁壮的诗意&quot;王克举油画作品在马奈草地展出"
+									style="text-decoration: none;">
+										"茁壮的诗意"王克举油画作品在马奈草地展出
+									</a>
+									<span>
+										[13-12-17]
+									</span>
+								</li>
+								<li>
+									<a href="./yjdt/dt2013/201312/t20131217_271995.htm" target="_blank" title="意大利国宝级雕塑《垂死的高卢人》&quot;到访&quot;美国"
+									style="text-decoration: none;">
+										意大利国宝级雕塑《垂死的高卢人》"到访...
+									</a>
+									<span>
+										[13-12-17]
+									</span>
+								</li>
+								<li>
+									<a href="./yjdt/dt2013/201312/t20131217_271992.htm" target="_blank" title="佛罗伦萨美迪奇博物馆展出中国书画"
+									style="text-decoration: none;">
+										佛罗伦萨美迪奇博物馆展出中国书画
+									</a>
+									<span>
+										[13-12-17]
+									</span>
+								</li>
+								<li>
+									<a href="./yjdt/dt2013/201312/t20131217_271991.htm" target="_blank" title="企业美术馆时代正在向大众走来"
+									style="text-decoration: none;">
+										企业美术馆时代正在向大众走来
+									</a>
+									<span>
+										[13-12-17]
+									</span>
+								</li>
+								<li>
+									<a href="./yjdt/dt2013/201312/t20131217_271989.htm" target="_blank" title="从美国民间博物馆看中国民间博物馆"
+									style="text-decoration: none;">
+										从美国民间博物馆看中国民间博物馆
+									</a>
+									<span>
+										[13-12-17]
+									</span>
+								</li>
+								<li>
+									<a href="./yjdt/dt2013/201312/t20131217_271988.htm" target="_blank" title="央美苍蝇事件：艺术批评的社会危机"
+									style="text-decoration: none;">
+										央美苍蝇事件：艺术批评的社会危机
+									</a>
+									<span>
+										[13-12-17]
+									</span>
+								</li>
+								<li>
+									<a href="./yjdt/dt2013/201312/t20131216_271984.htm" target="_blank" title="大都会《水墨》展如何解读中国当代艺术"
+									style="text-decoration: none;">
+										大都会《水墨》展如何解读中国当代艺术
+									</a>
+									<span>
+										[13-12-16]
+									</span>
+								</li>
+								<li>
+									<a href="./yjdt/dt2013/201312/t20131216_271983.htm" target="_blank" title="草间弥生：我希望通过艺术促进世界和平"
+									style="text-decoration: none;">
+										草间弥生：我希望通过艺术促进世界和平
+									</a>
+									<span>
+										[13-12-16]
+									</span>
+								</li>
+								<li>
+									<a href="./yjdt/dt2013/201312/t20131216_271982.htm" target="_blank" title="中国美术馆馆长范迪安：政府应加大力度支持美术馆收藏"
+									style="text-decoration: none;">
+										中国美术馆馆长范迪安：政府应加大力度...
+									</a>
+									<span>
+										[13-12-16]
+									</span>
+								</li>
+								<li>
+									<a href="./yjdt/dt2013/201312/t20131216_271980.htm" target="_blank" title="“博物馆与新应用技术”2013国际研讨会于中央美术学院美术馆开幕"
+									style="text-decoration: none;">
+										“博物馆与新应用技术”2013国际研讨会...
+									</a>
+									<span>
+										[13-12-16]
+									</span>
+								</li>
+							</ul>
+							<p class="more-box">
+								<a href="./yjdt/dt2013/" target="_blank">
+									更多...
+								</a>
+							</p>
+						</div>
+					</div>
+					<div class="news-rec-list-wrap news-exchange">
+						<div class="title t-s-bc4">
+							<h2>
+								国际展讯
+							</h2>
+						</div>
+						<div class="inner">
+							<ul class="list">
+								<li>
+									<a href="./gjzx/gj2013/201312/t20131217_271994.htm" target="_blank" title="巴黎大皇宫：比尔·维奥拉法国回顾展"
+									style="text-decoration: none;">
+										巴黎大皇宫：比尔·维奥拉法国回顾展
+									</a>
+									<span>
+										[13-12-17]
+									</span>
+								</li>
+								<li>
+									<a href="./gjzx/gj2013/201312/t20131217_271993.htm" target="_blank" title="洛杉矶会议中心：第19届洛杉矶艺术展"
+									style="text-decoration: none;">
+										洛杉矶会议中心：第19届洛杉矶艺术展
+									</a>
+									<span>
+										[13-12-17]
+									</span>
+								</li>
+								<li>
+									<a href="./gjzx/gj2013/201312/t20131217_271990.htm" target="_blank" title="沃尔夫斯堡艺术博物馆：织物与现代艺术——从克里姆特到现代"
+									style="text-decoration: none;">
+										沃尔夫斯堡艺术博物馆：织物与现代艺术——从...
+									</a>
+									<span>
+										[13-12-17]
+									</span>
+								</li>
+								<li>
+									<a href="./gjzx/gj2013/201312/t20131216_271987.htm" target="_blank" title="惠特尼艺术博物馆：超越爱——罗伯特·印第安纳作品"
+									style="text-decoration: none;">
+										惠特尼艺术博物馆：超越爱——罗伯特·印第安...
+									</a>
+									<span>
+										[13-12-16]
+									</span>
+								</li>
+								<li>
+									<a href="./gjzx/gj2013/201312/t20131216_271981.htm" target="_blank" title="美国国家美术馆：垂死的高卢人——卡皮托里尼博物馆古罗马杰作展"
+									style="text-decoration: none;">
+										美国国家美术馆：垂死的高卢人——卡皮托里尼...
+									</a>
+									<span>
+										[13-12-16]
+									</span>
+								</li>
+								<li>
+									<a href="./gjzx/gj2013/201312/t20131212_271971.htm" target="_blank" title="英国国家画廊：奇异美人——德国文艺复兴时期的杰作"
+									style="text-decoration: none;">
+										英国国家画廊：奇异美人——德国文艺复兴时期...
+									</a>
+									<span>
+										[13-12-12]
+									</span>
+								</li>
+							</ul>
+							<p class="more-box">
+								<a href="./gjzx/gj2013/" target="_blank">
+									更多...
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<span class="blank-10">
+			</span>
+			<div class="rec-exh-video-list">
+				<ul class="list clearfix">
+					<li class="indent">
+						<a href="http://www.namoc.org/Videos/spzy/zlhd/2013/201312/t20131209_271930.htm"
+						target="_blank">
+							<img src="http://www.namoc.org/Videos/spzy/zlhd/2013/201312/W020131209588125212889.jpg"
+							width="313" height="240" data-pinit="registered">
+							<div class="text" title="北京神韵——重大历史题材中国山水画展">
+								<span class="overlay">
+								</span>
+								<div>
+									<p class="date">
+										2013-12-09
+									</p>
+									<h3>
+										北京神韵——重大历史题材中国山水画展
+									</h3>
+								</div>
+								<em class="play-ico">
+								</em>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="http://www.namoc.org/Videos/spzy/spzt/201311/t20131127_271572.htm"
+						target="_blank">
+							<img src="http://www.namoc.org/Videos/spzy/spzt/201311/W020131127371283153776.jpg"
+							width="313" height="240" data-pinit="registered">
+							<div class="text" title="交互视象——2013海峡两岸当代艺术展">
+								<span class="overlay">
+								</span>
+								<div>
+									<p class="date">
+										2013-11-27
+									</p>
+									<h3>
+										交互视象——2013海峡两岸当代艺术展
+									</h3>
+								</div>
+								<em class="play-ico">
+								</em>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="http://www.namoc.org/Videos/spzy/zlhd/2013/201311/t20131129_271689.htm"
+						target="_blank">
+							<img src="http://www.namoc.org/Videos/spzy/zlhd/2013/201311/W020131129536613778293.jpg"
+							width="313" height="240" data-pinit="registered">
+							<div class="text" title="万象随心——尚可作品展">
+								<span class="overlay">
+								</span>
+								<div>
+									<p class="date">
+										2013-11-29
+									</p>
+									<h3>
+										万象随心——尚可作品展
+									</h3>
+								</div>
+								<em class="play-ico">
+								</em>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<h2 class="title">
+					<span>
+						<a href="http://www.namoc.org/zsjs/spzy/zlhd/" style="color:#fff">
+							视频资源
+						</a>
+					</span>
+				</h2>
+			</div>
+			<span class="blank-10">
+			</span>
+			<div class="rec-magazine-wrap clearfix">
+				<div class="content">
+					<div class="inner" style="overflow: hidden;">
+						<ul style="position: absolute; top: 0px; left: -145.18244400166066px; display: block; z-index: 2; opacity: 1;">
+							<li>
+								<img src="./hzmt/hz2013/dfysdj/201303/W020131122371243432006.jpg" style="width:145px; height:192px; border:0px;"
+								data-pinit="registered">
+							</li>
+							<li>
+								<img src="./hzmt/hz2013/zgsyj/201303/W020131210555133749607.jpg" style="width:145px; height:192px; border:0px;"
+								data-pinit="registered">
+							</li>
+							<li>
+								<img src="./hzmt/hz2013/sc/201303/W020130523525389129974.jpg" style="width:145px; height:192px; border:0px;"
+								data-pinit="registered">
+							</li>
+							<li>
+								<img src="./hzmt/hz2013/ysyh20131/201304/W020131205525629727306.jpg" style="width:145px; height:192px; border:0px;"
+								data-pinit="registered">
+							</li>
+							<li class="last">
+								<img src="./hzmt/hz2013/rbz/201304/W020131016488693599890.jpg" style="width:145px; height:192px; border:0px;"
+								data-pinit="registered">
+							</li>
+						</ul>
+						<ul style="position: absolute; top: 0px; left: 741.9810497415845px; display: block; z-index: 3; opacity: 1;">
+							<li>
+								<img src="./hzmt/hz2013/yscj/201304/W020131015560963138111.png" style="width:145px; height:192px; border:0px;"
+								data-pinit="registered">
+							</li>
+							<li>
+								<img src="./hzmt/hz2013/ysh/201304/W020131211483451716362.jpg" style="width:145px; height:192px; border:0px;"
+								data-pinit="registered">
+							</li>
+							<li>
+								<img src="./hzmt/hz2013/yssd/201304/W020131107549719945408.jpg" style="width:145px; height:192px; border:0px;"
+								data-pinit="registered">
+							</li>
+							<li>
+								<img src="./hzmt/hz2013/mswx/201304/W020131021549971093299.jpg" style="width:145px; height:192px; border:0px;"
+								data-pinit="registered">
+							</li>
+							<li class="last">
+								<img src="./hzmt/hz2013/zgsh/201304/W020131015520441865952.jpg" style="width:145px; height:192px; border:0px;"
+								data-pinit="registered">
+							</li>
+						</ul>
+					</div>
+					<p class="more-box">
+						<a href="./hzmt/">
+							更多合作媒体...
+						</a>
+					</p>
+					<h2 class="title">
+						<span>
+							合作媒体
+						</span>
+					</h2>
+				</div>
+			</div>
+		</div>
+		</script>
+		
+		<div class="tool-btns">
+			<ul>
+				<li class="search-btn">
+					<a title="搜索">
+					</a>
+				</li>
+				<li class="date-btn">
+					<a title="日历">
+					</a>
+				</li>
+				<li class="shop-btn">
+					<a href="http://ticket.namoc.org" target="_blank" title="网上预约">
+					</a>
+				</li>
+				<li class="hall-btn">
+					<a title="展厅" href="http://www.namoc.org/jljy/cgfw/index.htm#hall">
+					</a>
+				</li>
+				<li class="visit-btn">
+					<a title="参观" href="http://www.namoc.org/jljy/cgfw/">
+					</a>
+				</li>
+				<li class="back-top-btn">
+					<a title="返回顶部" style="visibility: hidden;">
+					</a>
+				</li>
+			</ul>
+			<div class="g-s-w">
+				<div class="inner">
+					<form action="/was5/web/search" method="post" onsubmit="return post('search_all')"
+					id="search_all">
+						<input type="hidden" name="searchword" value="">
+						<input type="hidden" name="channelid" id="overall_channelid" value="200116">
+						<em class="blank">
+						</em>
+						<fieldset>
+							<legend>
+								全站检索
+							</legend>
+							<div class="box">
+								<p class="box-inner">
+									<input class="input-text searchcolumn" type="text" id="overall_searchword"
+									formtype="inputtext" datatype="fulltext">
+									<label class="clew">
+										全站检索
+									</label>
+								</p>
+							</div>
+							<div class="box">
+								<div class="box-inner">
+									<div class="select-box">
+										<a>
+											全部
+										</a>
+										<span>
+											<em>
+											</em>
+										</span>
+									</div>
+									<div class="option-box" style="overflow: hidden; position: absolute;">
+										<div class="rollbar-path-vertical" style="z-index: 80; display: none; top: 0px; height: 0px;">
+											<div class="rollbar-handle" style="height: 30%; opacity: 1; top: -30px;">
+											</div>
+										</div>
+										<div class="rollbar-path-horizontal" style="z-index: 80; display: none; left: 0px; width: 140px;">
+											<div class="rollbar-handle" style="width: 30%; opacity: 1; left: 0px;">
+											</div>
+										</div>
+										<div class="rollbar-content" style="top: 0px; left: 0px; position: relative;">
+											<ul class="clearfix" id="overall_option">
+												<li channelid="200116">
+													全部
+												</li>
+												<li channelid="223664">
+													新闻
+												</li>
+												<li channelid="216529">
+													展览
+												</li>
+												<li channelid="204495">
+													藏品
+												</li>
+												<li channelid="271716">
+													教育活动
+												</li>
+												<li channelid="261745">
+													美术百科
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="box">
+								<p class="box-inner">
+									<input type="submit" class="submit-btn" value="检 索">
+								</p>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+<script src="./main/site_bottom.js"></script>		
+		
+	</div>
+	</body>
+</html>

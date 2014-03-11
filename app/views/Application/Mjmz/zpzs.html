@@ -1,0 +1,126 @@
+#{extends './mjmz_model.html'/}
+#{set title:'墨缘798' /}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".current-location").append(">     作品展示");
+        $("#zpzs").attr('class','current');
+        $('.are-exh-slider ul').before('<p id="num-nav1" class="num-nav">').cycle({
+            timeout: 5000,
+            pager: '#num-nav1'
+        });
+
+        inputValReset(".years-box .input-text", "年代", "年代");
+        hoverBgColor(".collection-hot-list dd");
+        hoverMask(".collection-sort-list li");
+    });
+</script>
+<div id="content">
+<div class="exh-slider-wrap are-exh-slider collection-rec-slider">
+    <div class="slider-content">
+        <ul>
+
+
+        <li style="position: absolute; top: 0px; left: 0px; display: block; z-index: 4; opacity: 1;"><a href="http://www.namoc.org/zsjs/gczp/cpjxs/201307/t20130723_257172.htm" target="_blank">
+
+            <img src="./cptj/201310/W020131014385034789601.jpg" style="width:960px; height:450px; border:0px;" data-pinit="registered">
+            <div class="text">
+                <h4>晚成庐藏书画集锦7</h4>
+                <p>作者：赵望云</p>
+                <p>创作年代：1936</p>
+                <p>规格：22.5×30.1cm</p>
+                <p>材质：纸本水墨设色</p>
+            </div>
+        </a></li>
+
+
+        <li style="position: absolute; top: 0px; left: 0px; display: none; z-index: 3; opacity: 0;"><a href="http://www.namoc.org/zsjs/gczp/cpjxs/201308/t20130812_263154.htm" target="_blank">
+
+            <img src="./cptj/201310/W020131014376568225859.jpg" style="width:960px; height:450px; border:0px;" data-pinit="registered">
+            <div class="text">
+                <h4>玩具窗</h4>
+                <p>作者：李平凡</p>
+                <p>创作年代：1955</p>
+                <p>规格：14.5×19.9cm</p>
+                <p></p>
+            </div>
+        </a></li>
+
+
+        <li style="position: absolute; top: 0px; left: 0px; display: none; z-index: 3; opacity: 0;"><a href="http://www.namoc.org/zsjs/gczp/cpjxs/201308/t20130801_259661.htm" target="_blank">
+
+            <img src="./cptj/201308/W020130805416305656642.jpg" style="width:960px; height:450px; border:0px;" data-pinit="registered">
+            <div class="text">
+                <h4>1988年7月21日，致路德维希教授夫妇的问候</h4>
+                <p>作者：让·丁格利</p>
+                <p>创作年代：1988</p>
+                <p>规格：29×46cm</p>
+                <p>规格：铅笔水彩画</p>
+            </div>
+        </a></li>
+
+
+    </ul>
+    </div>
+    <h3 class="title"><span>藏品推荐</span></h3>
+</div>
+<dl class="collection-hot-list">
+    <dt><span>热点藏品</span></dt>
+
+    #{list items:tuijian, as:'data' }
+
+
+    <dd class=""><a href="@{Mjmz.pages(data.id)}" target="_blank">
+        <div>
+            <p class="image"><img src="${data.mappath}" width="100" height="100" border="0" data-pinit="registered"></p>
+            <span>${data.title}</span>
+            <span>${data.author}</span>
+        </div>
+    </a></dd>
+
+    #{/list}
+
+</dl>
+<div class="collection-sort-list">
+    <h2 class="title">平面类</h2>
+    <div class="list">
+        <ul class="clearfix">
+            #{list items:plist, as:'data' }
+
+            <li>
+                <a href="@{Mjmz.ClassList(data.id,data.title)}" target="_blank">
+                    <p class="image"><img src="${data.mappath}"  style="width:299px; height:240px; border:0px;" data-pinit="registered"></p>
+                    <span style="background: #63b1c3;">${data.title}</span>
+                </a>
+            </li>
+
+            #{/list}
+
+
+
+
+
+        </ul>
+    </div>
+</div>
+<div class="collection-sort-list">
+    <h2 class="title">立体类</h2>
+    <div class="list">
+        <ul class="clearfix">
+
+            #{list items:llist, as:'data' }
+
+            <li>
+                <a href="@{Mjmz.ClassList(data.id,data.title)}" target="_blank">
+                    <p class="image"><img src="${data.mappath}" style="width:299px; height:240px; border:0px;" data-pinit="registered"></p>
+                    <span style="background: #63b1c3;">${data.title}</span>
+                </a>
+            </li>
+
+            #{/list}
+
+
+
+        </ul>
+    </div>
+</div>
+</div>
