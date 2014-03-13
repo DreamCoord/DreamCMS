@@ -18,40 +18,37 @@ import backmodels.mag_classlist;
 import com.alibaba.fastjson.JSON;
 //分类管理
 public class Classify extends Controller{
-	public static void getClassify(){
-		
-	}
-	public static void selectClassify(){
-		
-	}
 	//分类管理列表
 	public static void allClassify(){
-		List<mag_classify> pList = mag_classify.find("select id,name from mag_classify order by id desc").fetch();
-		String pStr=JSON.toJSONString(pList);
+		List<mag_classify> categories = mag_classify.findAll();
 		
-		String classhql = "select new backmodels.mag_allclasslist(c.id,c.name,c.alias,c.miaoshu) from mag_classify c";
-		Query classquery = JPA.em().createQuery(classhql);		
-		List<mag_allclasslist> classList =classquery.getResultList();
-		//bug
-		String class2hql = "select new backmodels.mag_allclasslist2(c.id,count(a.id)) from mag_classify c left join c.classify ca left join ca.art a where c.id=ca.classify.id and ca.art.id = a.id";
-		Query class2query = JPA.em().createQuery(class2hql);		
-		List<mag_allclasslist2> class2List =class2query.getResultList();
-		
-		for(int i=0;i<classList.size();i++){
-			for(int m =0;m<class2List.size();m++){
-				if(classList.get(i).getId()==class2List.get(m).getId()){
-					classList.get(i).setSumart(class2List.get(m).getSumart());
-				}
-			}
-		}
-//		
-		
-		String allStr = JSON.toJSONString(classList);
-		String jsonStr = "{\"pArr\":"+pStr+",\"classList\":"+allStr+"}";
-		System.out.println(jsonStr);
-		renderJSON(jsonStr);
-		
+		String msg = flash.get("msg");
+		render(categories, msg);
 	}
+	
+	public static void edit(int id){
+		mag_classify category = mag_classify.findById(id);
+		if(request.method == "GET"){
+			render(category);
+		}else{
+			category.name = params.get("name");
+			category.alias = params.get("alias");
+			category.miaoshu = params.get("miaoshu");
+			category.save();
+			
+			flash("msg", "<div class='alert alert-success'>保存成功</div>");
+			redirect("/admin/category");
+		}
+	}
+	
+	public static void delete(int id){
+		mag_classify category = mag_classify.findById(id);
+		category.delete();
+		
+		flash("msg", "<div class='alert alert-success'>删除成功</div>");
+		redirect("/admin/category");
+	}
+	
 	//文章内部分类
 	public static void allArticleClass(){
 		List<mag_classify> pList = mag_classify.find("from mag_classify order by id desc").fetch();
