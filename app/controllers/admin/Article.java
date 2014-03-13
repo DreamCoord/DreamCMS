@@ -17,10 +17,11 @@ public class Article extends Controller{
 //	获取所有文章
 	public static void allArticle(){
 		List<mag_allarticlelist> articles =  mag_article.find("select new backmodels.mag_allarticlelist(id,title,author,tags,time,content) from mag_article order by id desc").fetch();
+		String msg = flash.get("msg");
 //		String allStr = JSON.toJSONString(artlist);
 //		System.out.println(allStr);
 //		renderJSON("{\"data\":"+allStr+"}");
-		render(articles);
+		render(articles, msg);
 	}
 //	查询文章
 	public static void selectArticle(){
@@ -51,11 +52,28 @@ public class Article extends Controller{
 	}
 
 	public static void delete(int id){
+		mag_article article = mag_article.findById(id);
+		article.delete();
 		
+		flash("msg", "删除成功");
+		redirect("/admin/article");
 	}
 
 	public static void edit(int id){
-		
+		mag_article article = mag_article.findById(id);
+		if(request.method == "GET"){
+			render(article);
+		}else{
+			String title = params.get("title");
+			String content = params.get("content");
+			
+			article.title = title;
+			article.content = content;
+			article.save();
+			
+			flash("msg", "<div class='alert alert-success'>保存成功</div>");
+			redirect("/admin/article");
+		}
 	}
 	
 }

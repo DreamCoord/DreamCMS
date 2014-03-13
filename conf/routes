@@ -54,9 +54,10 @@ GET /admin/logout admin.login.logout
 POST    /admin/verification						admin.login.Verification
 GET     /admin/register							admin.login.register
 #文章管理
-GET		/admin/allArticle						admin.Article.allArticle
+GET		/admin/article						admin.Article.allArticle
 POST	/admin/addArticle						admin.Article.addArticle
 GET /admin/article/edit admin.Article.edit
+POST /admin/article/edit admin.Article.edit
 GET /admin/article/delete admin.Article.delete
 
 #分类管理
