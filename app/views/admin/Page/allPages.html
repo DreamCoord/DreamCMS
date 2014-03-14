@@ -1,0 +1,35 @@
+#{extends 'admin_frame_page.html' /}
+<div class="page-header">
+	<h1>页面管理</h1>
+</div>
+${msg.raw()}
+<table class="table">
+	<thead>
+		<tr>
+			<th>标题</th>
+			<th>作者</th>
+			<th>内容</th>
+			<th>创建时间</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	#{list items:pages, as:'page'}
+		<tr>
+			<td>${page.title}</td>
+			<td>${page.author}</td>
+			<td>${page.content}</td>
+			<td>${page.createtime}</td>
+			<td>
+				<a class="btn btn-info" href="@{admin.Page.edit(page.id)}">
+					<i class="icon-edit"></i>
+					编辑
+				</a>
+				<a class="btn btn-danger" href="@{admin.Page.delete(page.id)}" onclick="if(confirm('确定删除?')){return true;}else{return false;}">
+					<i class="icon-trash"></i>
+					删除
+				</a>
+			</td>
+		</tr>
+	#{/list}
+</table>
+<a href="@{Admin.Page.add}" class="btn btn-primary">添加页面</a>

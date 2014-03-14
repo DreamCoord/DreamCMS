@@ -1,0 +1,23 @@
+#{extends 'admin_frame_page.html' /}
+
+<div class="page-header">
+	<h1>编辑页面</h1>
+</div>
+
+<form method="POST">
+	<table class="table">
+		<tr>
+			<td>标题</td>
+			<td>
+				<input name="title" value="${page.title}">
+			</td>
+		</tr>
+		<tr>
+			<td>内容</td>
+			<td>
+				<textarea name="content">${page.content}</textarea>
+			</td>
+		</tr>
+	</table>
+	<button type="submit" class="btn btn-primary">保存</button>
+</form>

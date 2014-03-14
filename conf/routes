@@ -46,6 +46,11 @@ GET     /public/                                staticDir:public
 
 # Catch all
 #*       /{controller}/{action}                  {controller}.{action}
+
+
+
+
+
 #后台导航
 GET     /admin									admin.index.index
 GET     /admin/index							admin.index.index
@@ -92,8 +97,12 @@ POST	/admin/addMediaPar						admin.MediaPar.addMediaPar
 POST	/admin/delMediaPar						admin.MediaPar.delMediaPar
 POST	/admin/getMediaPar						admin.MediaPar.getMediaPar
 #页面管理
-POST	/admin/addPage							admin.Page.addPage
-GET		/admin/allPages							admin.Page.allPages
+GET /admin/page/add admin.Page.add
+POST	/admin/page/add							admin.Page.add
+GET		/admin/page							admin.Page.allPages
+GET /admin/page/edit admin.Page.edit
+POST /admin/page/edit admin.Page.edit
+GET /admin/page/delete admin.Page.delete
 #用户管理
 POST	/admin/addUser							admin.RBAC.addUser
 GET		/admin/allUser							admin.RBAC.allUser
