@@ -1,0 +1,27 @@
+#{extends 'admin_frame_page.html' /}
+<div class="page-header">
+	<h1>分类编辑</h1>
+</div>
+<form method="POST">
+	<table class="table">
+		<tr>
+			<td>名称</td>
+			<td>
+				<input name="name" value="${category.name}">
+			</td>
+		</tr>
+		<tr>
+			<td>别名</td>
+			<td>
+				<input name="alias" value="${category.alias}">
+			</td>
+		</tr>
+		<tr>
+			<td>描述</td>
+			<td>
+				<input name="miaoshu" value="${category.miaoshu}">
+			</td>
+		</tr>
+	</table>
+	<button type="submit" class="btn btn-primary">保存</button>
+</form>
