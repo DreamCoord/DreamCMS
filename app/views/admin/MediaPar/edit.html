@@ -1,0 +1,23 @@
+#{extends 'admin_frame_page.html' /}
+<div class="page-header">
+	<h1>修改媒体</h1>
+</div>
+<form method="POST" enctype="multipart/form-data">
+	<table class="table">
+		<tr>
+			<td>标题</td>
+			<td>
+				<input name="title" value="${media.title}">
+			</td>
+		</tr>
+		<tr>
+			<td>备注</td>
+			<td>
+				<input name="remark" value="${media.remark}">
+			</td>
+		</tr>
+	</table>
+	
+	
+	<button type="submit" class="btn btn-primary">保存</button>
+</form>

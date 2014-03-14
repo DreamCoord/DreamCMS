@@ -93,9 +93,11 @@ POST	/admin/getBanner						admin.Banner.getBanner
 GET		/admin/allBannerlist					admin.Banner.allBannerList
 #合作媒体管理
 GET		/admin/allMediaPar						admin.MediaPar.allMediaPar
+GET	/admin/addMediaPar admin.MediaPar.addMediaPar
 POST	/admin/addMediaPar						admin.MediaPar.addMediaPar
-POST	/admin/delMediaPar						admin.MediaPar.delMediaPar
-POST	/admin/getMediaPar						admin.MediaPar.getMediaPar
+GET /admin/Media/edit admin.MediaPar.edit
+POST /admin/Media/edit admin.MediaPar.edit
+GET /admin/Media/delete admin.MediaPar.delete
 #页面管理
 GET /admin/page/add admin.Page.add
 POST	/admin/page/add							admin.Page.add

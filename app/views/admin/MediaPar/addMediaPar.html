@@ -1,0 +1,29 @@
+#{extends 'admin_frame_page.html' /}
+<div class="page-header">
+	<h1>添加媒体</h1>
+</div>
+<form method="POST" enctype="multipart/form-data">
+	<table class="table">
+		<tr>
+			<td>标题</td>
+			<td>
+				<input name="title">
+			</td>
+		</tr>
+		<tr>
+			<td>上传文件</td>
+			<td>
+				<input type="file" name="image">
+			</td>
+		</tr>
+		<tr>
+			<td>备注</td>
+			<td>
+				<input name="remark">
+			</td>
+		</tr>
+	</table>
+	
+	
+	<button type="submit" class="btn btn-primary">保存</button>
+</form>
