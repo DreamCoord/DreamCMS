@@ -57,7 +57,7 @@
 					<a href="#" class="navbar-brand">
 						<small>
 							<i class="icon-leaf"></i>
-							Ace Admin
+							DreamCMS
 						</small>
 					</a><!-- /.brand -->
 				</div><!-- /.navbar-header -->
@@ -277,8 +277,8 @@
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 								<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
-									<small>Welcome,</small>
-									Jason
+									<small>欢迎,</small>
+									${session.get("username")}
 								</span>
 
 								<i class="icon-caret-down"></i>
@@ -379,13 +379,13 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home home-icon"></i>
-								<a href="#">Home</a>
+								<a href="#">主页</a>
 							</li>
 
 							<li>
-								<a href="#">Other Pages</a>
+								<a href="#" id="breadcrumb_name">文章管理</a>
 							</li>
-							<li class="active">Blank Page</li>
+<!-- 							<li class="active">Blank Page</li> -->
 						</ul><!-- .breadcrumb -->
 
 						<div class="nav-search" id="nav-search">
@@ -506,6 +506,7 @@
 			$(function(){
 				$('.nav-list a').click(function(){
 					$('iframe#main').attr('src', $(this).attr('href'));
+					$('#breadcrumb_name').text($(this).text());
 					return false;
 				})
 			})
