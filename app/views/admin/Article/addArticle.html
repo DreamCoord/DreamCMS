@@ -1,0 +1,32 @@
+#{extends 'admin_frame_page.html' /}
+<div class="page-header">
+	<h1>添加文章</h1>
+</div>
+
+<form method="POST">
+	<table class="table">
+		<tr>
+			<td>标题</td>
+			<td>
+				<input name="title">
+			</td>
+		</tr>
+		<tr>
+			<td>内容</td>
+			<td>
+				<textarea name="content"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td>分类</td>
+			<td>
+				<select name="category_id">
+					#{list items:categories, as:'category'}
+						<option value="${category.id}">${category.name}</option>
+					#{/list}
+				</select>
+			</td>
+		</tr>
+	</table>
+	<button type="submit" class="btn btn-primary">确定</button>
+</form>

@@ -1,6 +1,7 @@
 package controllers.admin;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -28,27 +29,20 @@ public class Article extends Controller{
 		
 	}
 //	添加文章
-	public static void addArticle(String author,String titleStr,String contentStr,String time,String state,String top,List<String> classify,String tags){
-		String timeStr = "";
-		if(time.equals("立即")){
-			java.text.DateFormat format1 = new java.text.SimpleDateFormat(  
-	                "yyyy-MM-dd hh:mm");  
-			timeStr = format1.format(new Date()).toString();
+	public static void addArticle(String title,String content,String state,String top,String tags){
+		List<mag_classify> categories = mag_classify.findAll();
+		if(request.method == "GET"){
+			render(categories);
 		}else{
-			timeStr = time;
+			String author = session.get("username");
+			String time = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date());
+			
+			mag_article article = new mag_article(title, content, time, state,top,author,tags);
+			article.category = mag_classify.findById(Integer.parseInt(params.get("category_id")));
+			article.save();
+			String jsonStr = "{\"status\":ok}";
+			renderJSON(jsonStr);
 		}
-		 
-		mag_article art = new mag_article(titleStr, contentStr, timeStr, state,top,author,tags).save();
-		int id = art.id;
-		mag_article artID = new mag_article();
-		artID.id = id;
-		for(int i = 0;i<classify.size();i++){
-			mag_classify classID = new mag_classify();
-			classID.id = Integer.parseInt(classify.get(i));
-			new mag_classify_art(artID,classID).save();
-		}
-		String jsonStr = "{\"status\":ok}";
-		renderJSON(jsonStr);
 	}
 
 	public static void delete(int id){

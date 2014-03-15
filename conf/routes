@@ -60,7 +60,8 @@ POST    /admin/verification						admin.login.Verification
 GET     /admin/register							admin.login.register
 #文章管理
 GET		/admin/article						admin.Article.allArticle
-POST	/admin/addArticle						admin.Article.addArticle
+GET /admin/Article/add admin.Article.addArticle
+POST /admin/Article/add admin.Article.addArticle
 GET /admin/article/edit admin.Article.edit
 POST /admin/article/edit admin.Article.edit
 GET /admin/article/delete admin.Article.delete
