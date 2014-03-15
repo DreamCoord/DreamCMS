@@ -40,8 +40,8 @@ public class Article extends Controller{
 			mag_article article = new mag_article(title, content, time, state,top,author,tags);
 			article.category = mag_classify.findById(Integer.parseInt(params.get("category_id")));
 			article.save();
-			String jsonStr = "{\"status\":ok}";
-			renderJSON(jsonStr);
+
+			allArticle();
 		}
 	}
 

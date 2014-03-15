@@ -69,9 +69,14 @@ public class Classify extends Controller{
 	}
 	
 	//添加分类
-	public static void addClassify(String classname,int parName,String aliasname,String miaoshu){
-		new mag_classify(classname, parName, aliasname, miaoshu).save();
-		renderJSON("{\"state\":\"ok\"}");
+	public static void addClassify(String name,int pid,String alias,String description){
+		if(request.method=="GET"){
+			render();
+		}else{
+			new mag_classify(name, pid, alias, description).save();
+
+			allClassify();
+		}
 	}
 	public static void delClassify(int id){
 		mag_classify classify = mag_classify.findById(id);

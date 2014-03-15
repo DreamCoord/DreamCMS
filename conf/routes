@@ -68,7 +68,8 @@ GET /admin/article/delete admin.Article.delete
 
 #分类管理
 GET		/admin/allArtClass						admin.Classify.allArticleClass
-POST    /admin/addClassify						admin.Classify.addClassify
+GET /admin/addClassify	admin.Classify.addClassify
+POST /admin/addClassify	admin.Classify.addClassify
 GET		/admin/category						    admin.Classify.allClassify
 GET /admin/category/edit admin.Classify.edit
 POST /admin/category/edit admin.Classify.edit
