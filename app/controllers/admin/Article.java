@@ -16,7 +16,7 @@ import com.alibaba.fastjson.JSON;
 public class Article extends Controller{
 //	获取所有文章
 	public static void allArticle(){
-		List<mag_allarticlelist> articles =  mag_article.find("select new backmodels.mag_allarticlelist(id,title,author,tags,time,content) from mag_article order by id desc").fetch();
+		List<mag_article> articles = mag_article.findAll();
 		String msg = flash.get("msg");
 //		String allStr = JSON.toJSONString(artlist);
 //		System.out.println(allStr);

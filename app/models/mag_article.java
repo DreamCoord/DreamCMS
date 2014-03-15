@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Query;
 
@@ -28,8 +29,8 @@ public class mag_article extends GenericModel{
 	public String top; 	//文章置顶
 	public String author;	//作者
 	public String tags;	//标签
-	@OneToMany(mappedBy="art")
-	public List<mag_classify_art> art;
+	@ManyToOne
+	mag_classify category;
 	//新闻查询
 	public static List<Map> getNewsList(int num,String classify){
 		String classhql = "select new models.mag_article(art.id,art.title,art.time,art.author) from mag_article art left join art.art mca left join mca.classify cf where cf.alias ='"+classify+"'";
