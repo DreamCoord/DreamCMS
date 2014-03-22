@@ -1,0 +1,73 @@
+<ul class="nav nav-list">
+    <li >
+        <a href="@{Admin.Home.home}">
+            <i class="icon-dashboard"></i>
+            <span class="menu-text"> 运行概要 </span>
+        </a>
+    </li>
+    <li>
+        <a href="@{Admin.Article.allArticle}">
+            <i class="icon icon-align-justify"></i>
+            <span class="menu-text"> 文章管理 </span>
+        </a>
+    </li>
+    <li>
+        <a href="@{Admin.Classify.allClassify}" class="dropdown-toggle">
+            <i class="icon icon-tags"></i>
+            <span class="menu-text"> 分类管理 </span>
+        </a>
+    </li>
+    <li>
+        <a href="@{Admin.Page.allPages}" class="dropdown-toggle">
+            <i class="icon icon-paste"></i>
+            <span class="menu-text"> 页面管理 </span>
+        </a>
+    </li>
+    <li>
+        <a href="javascript:" class="dropdown-toggle">
+            <i class="icon icon-film"></i>
+            <span class="menu-text"> 媒体管理 </span>
+            <b class="arrow icon-angle-down"></b>
+        </a>
+        <ul class="submenu">
+            <li>
+                <a href="@{Admin.Media.allImageGroup}">
+                    <i class="icon-double-angle-right"></i>
+                    图片组管理
+                </a>
+            </li>
+            <li>
+                <a href="@{Admin.Media.allImage}">
+                    <i class="icon-double-angle-right"></i>
+                    图片管理
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="@{Admin.Comment.allComment}" class="dropdown-toggle">
+            <i class="icon icon-comment-alt"></i>
+            <span class="menu-text"> 评论管理 </span>
+        </a>
+    </li>
+    <li>
+        <a href="@{Admin.User.allUser}" class="dropdown-toggle">
+            <i class="icon icon-group"></i>
+            <span class="menu-text"> 用户管理 </span>
+        </a>
+    </li>
+    <li>
+        <a href="javascript:" class="dropdown-toggle">
+            <i class="icon icon-cog"></i>
+            <span class="menu-text"> 系统管理 </span>
+            <b class="arrow icon-angle-down"></b>
+        </a>
+        <ul class="submenu">
+            <li id = "setting"><a href="@{Admin.Systems.changgui}"><i class="icon-double-angle-right"></i>常规设置</a></li>
+            <li id = "flinks"><a href="@{Admin.Systems.links}"><i class="icon-double-angle-right"></i>友情链接管理</a></li>
+            <li id = "tjfx"><a href="@{Admin.Systems.fenxi}"><i class="icon-double-angle-right"></i>统计分析</a></li>
+            <li id = "logs"><a href="@{Admin.Systems.logs}"><i class="icon-double-angle-right"></i>系统日志</a></li>
+        </ul>
+    </li>
+
+</ul>

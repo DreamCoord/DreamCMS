@@ -52,6 +52,20 @@ GET     /public/                                staticDir:public
 
 
 #后台导航
+GET     /admin/Home                             Admin.Home.home
+
+GET     /admin/allImageGroup                    Admin.Media.allImageGroup
+GET     /admin/allImage                         Admin.Media.allImage
+GET     /admin/addImage                         Admin.Media.addImage
+GET     /admin/allComment                       Admin.Comment.allComment
+GET     /admin/allUser                          Admin.User.allUser
+
+GET     /admin/changgui                         Admin.Systems.changgui
+GET     /admin/links                            Admin.Systems.links
+GET     /admin/logs                             Admin.Systems.logs
+GET     /admin/fenxi                            Admin.Systems.fenxi
+
+
 GET     /admin									admin.index.index
 GET     /admin/index							admin.index.index
 GET     /admin/login							admin.login.login

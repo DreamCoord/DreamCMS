@@ -1,0 +1,92 @@
+#{extends 'admin_page_template.html' /}
+<div class="page-header">
+    <h1>添加页面</h1>
+</div>
+<div class="row">
+
+    <div class="col-sm-8">
+        <div class="col-sm-12">
+            <input type="text" id="title" placeholder="页面标题" class="col-xs-12 col-sm-12">
+        </div>
+
+        <div class="col-sm-12" style="margin-top: 10px">
+            <textarea id="editor_id" name="content" class="col-sm-12" style="height:400px;">
+                &lt;strong&gt;内容&lt;/strong&gt;
+            </textarea>
+        </div>
+    </div>
+    <div class="col-sm-4">
+
+
+        <div class="widget-box">
+            <div class="widget-header widget-header-flat">
+                <h4 class="smaller">
+                    <i class="icon-quote-left smaller-80"></i>
+                    发布
+                    <i class="icon-quote-right smaller-80"></i>
+                </h4>
+            </div>
+
+            <div class="widget-body">
+                <div class="widget-main">
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <a href="@{admin.Article.addArticle}" class="btn btn-success">添加</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<link rel="stylesheet"  href="@{'/public/assets/css/zTreeStyle.css'}">
+<script charset="utf-8" src="@{'/public/assets/js/kindeditor.js'}"></script>
+<script charset="utf-8" src="@{'/public/assets/js/lang/zh_CN.js'}"></script>
+<script charset="utf-8" src="@{'/public/assets/js/jquery.ztree.core-3.5.min.js'}"></script>
+<script charset="utf-8" src="@{'/public/assets/js/jquery.ztree.excheck-3.5.min.js'}"></script>
+<script>
+    KindEditor.ready(function(K) {
+        window.editor = K.create('#editor_id');
+    });
+
+    var setting = {
+        check: {
+            enable: true,
+            chkDisabledInherit: true
+        },
+        data: {
+            simpleData: {
+                enable: true
+            }
+        }
+    };
+    var zNodes = [{id:1, pId:0, name:"分类目录", open:false},
+        {id:101, pId:1, name:"最简单的树 --  标准 JSON 数据", iconSkin:"menu", file:"core/standardData"},
+        {id:102, pId:1, name:"最简单的树 --  简单 JSON 数据", iconSkin:"menu", file:"core/simpleData"},
+        {id:103, pId:1, name:"不显示 连接线", iconSkin:"menu", file:"core/noline"}];
+    $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+
+
+    function getChildNodes() {
+        var returnArr = []
+        var treeObj=$.fn.zTree.getZTreeObj("treeDemo"),
+                nodes=treeObj.getCheckedNodes(true),
+                v="";
+        for(var i=0;i<nodes.length;i++){
+            v+=nodes[i].name + ",";
+            returnArr.push(nodes[i].id); //获取选中节点的值
+        }
+        return returnArr;
+    }
+
+</script>
