@@ -2,27 +2,61 @@
 <div class="page-header">
 	<h1>编辑文章</h1>
 </div>
-<form method="POST">
-	<table class="table">
-		<tr>
-			<td>标题</td>
-			<td>
-				<input value="${article.title}" name="title">
-			</td>
-		</tr>
-		<tr>
-			<td>
-				内容
-			</td>
-			<td>
-				<textarea name="content" id="content">${article.content}</textarea>
-			</td>
-		</tr>
-	</table>
-	<button class="btn btn-primary">保存</button>
+<form method="POST" class="row">
+	<div class="col-md-8">
+		<table class="table">
+			<tr>
+				<td>标题</td>
+				<td>
+					<input value="${article.title}" name="title">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					内容
+				</td>
+				<td>
+					<textarea name="content" id="content">${article.content}</textarea>
+				</td>
+			</tr>
+		</table>
+		<input type="hidden" name="category_id">
+	</div>
+	<div class="col-md-4">
+		<div class="widget-box">
+            <div class="widget-header widget-header-flat">
+                <h4 class="smaller">
+                    分类
+                </h4>
+            </div>
+
+            <div class="widget-body">
+                <div class="widget-main">
+                    <div id="categories_tree">
+                    	<ul>
+                    		#{list items:categories, as:'category'}
+                    			<li category_id="${category.id}" #{if category.id==article.category.id}class="jstree-clicked"#{/if}>${category.name}</li>
+                    		#{/list}
+                    	</ul>
+                    </div>
+                    <button class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+	</div>
+	
 </form>
 
+<script charset="utf-8" src="@{'/public/assets/js/jstree/jstree.min.js'}"></script>
+<link rel="stylesheet" href="@{'/public/assets/js/jstree/themes/default/style.min.css'}" />
 <script src="@{'/public/assets/js/ckeditor/ckeditor.js'}"></script>
 <script>
 	CKEDITOR.replace('content');
+	$(function(){
+		$('#categories_tree')
+			.on('changed.jstree', function(e, data){
+				$('input[name="category_id"]').val(data.node.li_attr.category_id);
+			})
+			.jstree();
+	})
 </script>

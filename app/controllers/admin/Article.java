@@ -13,15 +13,10 @@ import backmodels.mag_allarticlelist;
 
 import com.alibaba.fastjson.JSON;
 
-//文章管理
 public class Article extends Controller{
-//	获取所有文章
 	public static void allArticle(){
 		List<mag_article> articles = mag_article.find("order by time desc").fetch();
 		String msg = flash.get("msg");
-//		String allStr = JSON.toJSONString(artlist);
-//		System.out.println(allStr);
-//		renderJSON("{\"data\":"+allStr+"}");
 		render(articles, msg);
 	}
 //	查询文章
@@ -55,14 +50,16 @@ public class Article extends Controller{
 
 	public static void edit(int id){
 		mag_article article = mag_article.findById(id);
+		List<mag_classify> categories = mag_classify.findAll();
 		if(request.method == "GET"){
-			render(article);
+			render(article, categories);
 		}else{
 			String title = params.get("title");
 			String content = params.get("content");
 			
 			article.title = title;
 			article.content = content;
+			article.category = mag_classify.findById(Integer.parseInt(params.get("category_id")));
 			article.save();
 			
 			flash("msg", "<div class='alert alert-success'>保存成功</div>");
