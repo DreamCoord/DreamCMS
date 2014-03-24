@@ -10,39 +10,31 @@
             </div>
 
         <div class="col-sm-12" style="margin-top: 10px">
-                <textarea id="editor_id" name="content" class="col-sm-12" style="height:400px;">
-                    &lt;strong&gt;内容&lt;/strong&gt;
-                </textarea>
-            </div>
+            <textarea id="editor" name="content" class="col-sm-12" style="height:400px;">
+                &lt;strong&gt;内容&lt;/strong&gt;
+            </textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">保存</button>
+        <input type="hidden" name="category_id" id="category_id" value="1">
     </div>
+    
     <div class="col-sm-4">
-
-
         <div class="widget-box">
             <div class="widget-header widget-header-flat">
                 <h4 class="smaller">
-                    <i class="icon-quote-left smaller-80"></i>
-                    发布
-                    <i class="icon-quote-right smaller-80"></i>
+                    分类
                 </h4>
             </div>
 
             <div class="widget-body">
                 <div class="widget-main">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <ul id="treeDemo" class="ztree"></ul>
-                        </div>
+                    <div id="categories_tree">
+                    	<ul>
+                    		#{list items:categories, as:'category'}
+                    			<li category_id="${category.id}">${category.name}</li>
+                    		#{/list}
+                    	</ul>
                     </div>
-
-
-                    <hr>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <button id="submit" class="btn btn-success">添加</button>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -51,79 +43,21 @@
 </form>
 
 
-
-
-
-
-
 <link rel="stylesheet"  href="@{'/public/assets/css/zTreeStyle.css'}">
-<script charset="utf-8" src="@{'/public/assets/js/kindeditor.js'}"></script>
-<script charset="utf-8" src="@{'/public/assets/js/lang/zh_CN.js'}"></script>
+<script src="@{'/public/assets/js/ckeditor/ckeditor.js'}"></script>
 
 <script charset="utf-8" src="@{'/public/assets/js/jquery.validate.min.js'}"></script>
 <!--<script src="@{'/public/assets/js/jquery.wizard.js'}"></script>-->
 <script charset="utf-8" src="@{'/public/assets/js/efm_option.js'}"></script>
-<script charset="utf-8" src="@{'/public/assets/js/jquery.ztree.core-3.5.min.js'}"></script>
-<script charset="utf-8" src="@{'/public/assets/js/jquery.ztree.excheck-3.5.min.js'}"></script>
+<script charset="utf-8" src="@{'/public/assets/js/jstree/jstree.min.js'}"></script>
+<link rel="stylesheet" href="@{'/public/assets/js/jstree/themes/default/style.min.css'}" />
 <script>
-    KindEditor.ready(function(K) {
-        window.editor = K.create('#editor_id');
+    CKEDITOR.replace('editor');
+    $(function(){
+    	$('#categories_tree')
+    		.on('changed.jstree', function(e, data){
+    			$('#category_id').val(data.node.li_attr.category_id);
+    		})
+    		.jstree()
     });
-
-    var setting = {
-        check: {
-            enable: true,
-            chkDisabledInherit: true
-        },
-        data: {
-            simpleData: {
-                enable: true
-            }
-        }
-    };
-    var zNodes = [{id:1, pId:0, name:"分类目录", open:false},
-            {id:101, pId:1, name:"最简单的树 --  标准 JSON 数据", iconSkin:"menu", file:"core/standardData"},
-            {id:102, pId:1, name:"最简单的树 --  简单 JSON 数据", iconSkin:"menu", file:"core/simpleData"},
-            {id:103, pId:1, name:"不显示 连接线", iconSkin:"menu", file:"core/noline"}];
-    $.fn.zTree.init($("#treeDemo"), setting, zNodes);
-
-
-    function getChildNodes() {
-        var returnArr = []
-        var treeObj=$.fn.zTree.getZTreeObj("treeDemo"),
-                nodes=treeObj.getCheckedNodes(true),
-                v="";
-        for(var i=0;i<nodes.length;i++){
-            v+=nodes[i].name + ",";
-            returnArr.push(nodes[i].id); //获取选中节点的值
-        }
-        return returnArr;
-    }
-
-    $("#submit").click(function(){
-        var addink = function() {
-            var options = {
-                type : "post",
-                dataType : "json",
-                url : "addArticle",
-                beforeSubmit : function(){
-                },
-                success : function(){
-//                    $("#SaveMode").modal({show:true});
-                    console.log("OK");
-                },
-                error : function(){
-//                    $("#ErrMode").modal({show:true});
-                    console.log("OK");
-                }
-            };
-            // 异步提交登陆请求
-            $("#form-wizard").ajaxSubmit(options);
-        };
-        //表单验证
-        $("#form-wizard").validate(efmOption.validate_option(addink).Option);
-
-
-    } );
-
 </script>

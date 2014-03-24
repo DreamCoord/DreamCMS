@@ -15,9 +15,14 @@
 				内容
 			</td>
 			<td>
-				<textarea name="content">${article.content}</textarea>
+				<textarea name="content" id="content">${article.content}</textarea>
 			</td>
 		</tr>
 	</table>
 	<button class="btn btn-primary">保存</button>
 </form>
+
+<script src="@{'/public/assets/js/ckeditor/ckeditor.js'}"></script>
+<script>
+	CKEDITOR.replace('content');
+</script>
