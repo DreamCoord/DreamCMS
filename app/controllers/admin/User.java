@@ -9,62 +9,56 @@ import java.util.List;
 import models.mag_article;
 import models.mag_classify;
 import models.mag_classify_art;
+import models.rbac_users;
 import play.mvc.Controller;
 
 //文章管理
 public class User extends Controller{
 //	获取所有文章
 	public static void allUser(){
-		List<mag_article> articles = mag_article.findAll();
+		List<rbac_users> users = rbac_users.findAll();
 		String msg = flash.get("msg");
-//		String allStr = JSON.toJSONString(artlist);
-//		System.out.println(allStr);
-//		renderJSON("{\"data\":"+allStr+"}");
-		render(articles, msg);
+		render(users, msg);
 	}
 //	查询文章
 	public static void selectArticle(){
                   render();
 	}
-//	添加文章
-	public static void addArticle(String title,String content,String state,String top,String tags){
-		List<mag_classify> categories = mag_classify.findAll();
-		if(request.method == "GET"){
-			render(categories);
-		}else{
-			String author = session.get("username");
-			String time = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date());
-
-			mag_article article = new mag_article(title, content, time, state,top,author,tags);
-			article.category = mag_classify.findById(Integer.parseInt(params.get("category_id")));
-			article.save();
-
-			//allArticle();
-		}
+	public static void add(String username, String email, String name, String password){
+		rbac_users user = new rbac_users();
+		user.username = username;
+		user.email = email;
+		user.name = name;
+		user.password = password;
+		user.save();
+		
+		allUser();
 	}
 
 	public static void delete(int id){
-		mag_article article = mag_article.findById(id);
-		article.delete();
+		rbac_users user = rbac_users.findById(id);
+		user.delete();
 
 		flash("msg", "删除成功");
-		redirect("/admin/article");
+		allUser();
 	}
 
 	public static void edit(int id){
-		mag_article article = mag_article.findById(id);
+		rbac_users user = rbac_users.findById(id);
 		if(request.method == "GET"){
-			render(article);
+			render(user);
 		}else{
-			String title = params.get("title");
-			String content = params.get("content");
+			String username = params.get("username");
+			String name = params.get("name");
+			String email = params.get("email");
 
-			article.title = title;
-			article.content = content;
-			article.save();
+			user.username = username;
+			user.name = name;
+			user.email = email;
+			user.save();
 
 			flash("msg", "<div class='alert alert-success'>保存成功</div>");
-			redirect("/admin/article");
+			allUser();
 		}
 	}
 

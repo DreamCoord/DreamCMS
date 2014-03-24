@@ -1,0 +1,29 @@
+#{extends 'admin_frame_page.html' /}
+
+<div class="page-header">
+	<h1>编辑用户</h1>
+</div>
+
+<form method="POST">
+	<table class="table">
+		<tr>
+			<td>用户名</td>
+			<td>
+				<input name="username" value="${user.username}">
+			</td>
+		</tr>
+		<tr>
+			<td>姓名</td>
+			<td>
+				<input name="name" value="${user.name}">
+			</td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td>
+				<input name="email" value="${user.email}">
+			</td>
+		</tr>
+	</table>
+	<button type="submit" class="btn btn-primary">保存</button>
+</form>

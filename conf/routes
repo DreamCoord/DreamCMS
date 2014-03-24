@@ -73,6 +73,11 @@ GET     /admin/login							admin.login.login
 GET /admin/logout admin.login.logout
 POST    /admin/verification						admin.login.Verification
 GET     /admin/register							admin.login.register
+GET /admin/user/edit admin.User.edit
+POST /admin/user/edit admin.User.edit
+GET /admin/user/delete admin.User.delete
+POST /admin/user/add admin.User.add
+
 #文章管理
 GET		/admin/article						admin.Article.allArticle
 GET /admin/Article/add admin.Article.addArticle

@@ -38,6 +38,10 @@ public class rbac_users extends GenericModel{
 		this.loginip = loginip;
 		this.status = status;
 	}
+	
+	public rbac_users(){
+		
+	}
 
 	
 
