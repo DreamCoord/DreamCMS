@@ -12,7 +12,7 @@
 
             <div class="widget-body">
                 <div class="widget-main">
-                    <form id="form-wizard" class="form-horizontal">
+                    <form id="form-wizard" class="form-horizontal" method="POST" action="@{admin.Classify.addClassify}">
                         <div class="row form-group">
                             <div class="col-xs-12">
                                 <div class="form-group">
@@ -26,7 +26,7 @@
                                     <label class="col-sm-3 control-label no-padding-right" > 别名 ： </label>
 
                                     <div class="col-sm-9">
-                                        <input type="text" name="name" placeholder="别名" class="col-xs-10 col-sm-10">
+                                        <input type="text" name="alias" placeholder="别名" class="col-xs-10 col-sm-10">
                                     </div>
                                 </div>
                                 <div style="margin-bottom: 15px">
@@ -46,7 +46,7 @@
                                     <label class="col-sm-3 control-label no-padding-right" >描述 ：</label>
 
                                     <div class="col-sm-9">
-                                        <input type="text"  placeholder="描述" class="col-xs-10 col-sm-10">
+                                        <input type="text"  placeholder="描述" class="col-xs-10 col-sm-10" name="description">
                                     </div>
                                 </div>
                             </div>
@@ -84,26 +84,24 @@
                         <tr>
                             <th>名称</th>
                             <th>别名</th>
-                            <th>父分类</th>
                             <th>描述</th>
                             <th>文章</th>
                             <th style="width:200px;">操作</th>
                         </tr>
                         </thead>
                         <tbody>
-                        #{list items:classify, as:'classify'}
+                        #{list items:categories, as:'category'}
                         <tr>
-                            <td>${classify.title}</td>
-                            <td>${classify.author}</td>
-                            <td>${classify.parclassify}</td>
-                            <td>${classify.miaoshu}</td>
-                            <td>${classify.article}</td>
+                            <td>${category.name}</td>
+                            <td>${category.alias}</td>
+                            <td>${category.miaoshu}</td>
+                            <td></td>
                             <td>
-                                <a class="btn btn-info" href="@{admin.Article.edit(article.id)}">
+                                <a class="btn btn-info" href="@{admin.Classify.edit(category.id)}">
                                     <i class="icon-edit"></i>
                                     编辑
                                 </a>
-                                <a class="btn btn-danger" href="@{admin.Article.delete(article.id)}" onclick="if(confirm('确定删除?')){return true;}else{return false;}">
+                                <a class="btn btn-danger" href="@{admin.Classify.delete(category.id)}" onclick="if(confirm('确定删除?')){return true;}else{return false;}">
                                     <i class="icon-trash"></i>
                                     删除
                                 </a>
