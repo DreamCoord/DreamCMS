@@ -53,6 +53,7 @@ GET     /public/                                staticDir:public
 
 #后台导航
 GET     /admin/Home                             Admin.Home.home
+GET /admin/update Admin.Home.update
 
 GET     /admin/allImageGroup                    Admin.Media.allImageGroup
 GET     /admin/allImage                         Admin.Media.allImage
