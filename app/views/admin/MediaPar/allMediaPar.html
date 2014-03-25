@@ -1,41 +1,125 @@
-#{extends 'admin_frame_page.html' /}
-<div class="page-header">
-	<h1>媒体列表</h1>
+#{extends 'admin_page_template.html' /}
+
+<div class="row">
+    <div class="col-sm-4">
+        <div class="widget-box">
+            <div class="widget-header widget-header-flat">
+                <h4 class="smaller">
+                    <i class="icon-camera-retro smaller-80"></i>
+                    添加图片
+                </h4>
+            </div>
+
+            <div class="widget-body">
+                <div class="widget-main">
+                    <form class="form-horizontal" role="form">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div>
+                                    <div id="dropzone">
+                                        <div action="//dummy.html" class="dropzone">
+                                            <div class="fallback">
+                                                <input name="file" type="file" multiple="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-sm-8">
+
+        <div class="widget-box">
+            <div class="widget-header widget-header-flat">
+                <h4 class="smaller">
+                    <i class="icon-camera-retro smaller-80"></i>
+                    添加图片
+                </h4>
+            </div>
+
+            <div class="widget-body">
+                <div class="widget-main">
+                    <table class="table table-striped data-table">
+                        <thead>
+                        <tr>
+                        	<th></th>
+                            <th>标题</th>
+                            <th>作者</th>
+                            <th>图片路径</th>
+                            <th>创建时间</th>
+                            <th style="width:200px;">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        #{list items:medias, as:'media'}
+                        <tr>
+                        	<td>
+                        		<img width="50" height="50" src="${media.mappath}">
+                        	</td>
+                            <td>${media.title}</td>
+                            <td>${media.author}</td>
+                            <td>${media.mappath}</td>
+                            <td>${media.time}</td>
+                            <td>
+                                <a class="btn btn-info" href="@{admin.MediaPar.edit(media.id)}">
+                                    <i class="icon-edit"></i>
+                                    编辑
+                                </a>
+                                <a class="btn btn-danger" href="@{admin.MediaPar.delete(media.id)}" onclick="if(confirm('确定删除?')){return true;}else{return false;}">
+                                    <i class="icon-trash"></i>
+                                    删除
+                                </a>
+                            </td>
+                        </tr>
+                        #{/list}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+         </div>
+
+
+    </div>
+
 </div>
-${msg.raw()}
-<table class="table">
-	<thead>
-		<tr>
-			<th>标题</th>
-			<th>作者</th>
-			<th>路径</th>
-			<th>URL</th>
-			<th>备注</th>
-			<th>创建时间</th>
-			<th>操作</th>
-		</tr>
-	</thead>
-	<tbody>
-	#{list items:medias, as:'media'}
-		<tr>
-			<td>${media.title}</td>
-			<td>${media.author}</td>
-			<td>${media.mappath}</td>
-			<td>${media.url}</td>
-			<td>${media.remark}</td>
-			<td>${media.time}</td>
-			<td>
-				<a class="btn btn-info" href="@{admin.MediaPar.edit(media.id)}">
-					<i class="icon-edit"></i>
-					编辑
-				</a>
-				<a class="btn btn-danger" href="@{admin.MediaPar.delete(media.id)}" onclick="if(confirm('确定删除?')){return true;}else{return false;}">
-					<i class="icon-trash"></i>
-					删除
-				</a>
-			</td>
-		</tr>
-	#{/list}
-	</tbody>
-</table>
-<a href="@{admin.MediaPar.addMediaPar}" class="btn btn-primary">添加媒体</a>
+
+
+
+
+
+<script src="@{'/public/assets/js/dropzone.min.js'}"></script>
+<script charset="utf-8" src="@{'/public/assets/js/jquery.dataTables.min.js'}"></script>
+<script charset="utf-8" src="@{'/public/assets/js/jquery.dataTables.bootstrap.js'}"></script>
+
+<script charset="utf-8" src="@{'/public/assets/js/select2.min.js'}"></script>
+<script charset="utf-8" src="@{'/public/assets/js/efm_option.js'}"></script>
+<script type="text/javascript">
+    efmOption.TablStyle();
+    jQuery(function($){
+        try {
+            $(".dropzone").dropzone({
+                paramName: "upload", // The name that will be used to transfer the file
+				url: '@{admin.MediaPar.dragAdd}',
+                addRemoveLinks : true,
+                dictDefaultMessage :
+                        '<span class="bigger-150 bolder"><i class="icon-caret-right red"></i> 拖放文件</span> 上传 \
+                        <span class="smaller-80 grey">(或者 单击)</span> <br /> \
+                        <i class="upload-icon icon-cloud-upload blue icon-3x"></i>'
+                ,
+                dictResponseError: 'Error while uploading file!',
+
+                //change the previewTemplate to use Bootstrap progress bars
+                previewTemplate: "<div class=\"dz-preview dz-file-preview\">\n  <div class=\"dz-details\">\n    <div class=\"dz-filename\"><span data-dz-name></span></div>\n    <div class=\"dz-size\" data-dz-size></div>\n    <img data-dz-thumbnail />\n  </div>\n  <div class=\"progress progress-small progress-striped active\"><div class=\"progress-bar progress-bar-success\" data-dz-uploadprogress></div></div>\n  <div class=\"dz-success-mark\"><span></span></div>\n  <div class=\"dz-error-mark\"><span></span></div>\n  <div class=\"dz-error-message\"><span data-dz-errormessage></span></div>\n</div>"
+            });
+        } catch(e) {
+            alert('Dropzone.js does not support older browsers!');
+        }
+
+    });
+</script>

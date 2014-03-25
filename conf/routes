@@ -56,7 +56,7 @@ GET     /admin/Home                             Admin.Home.home
 GET /admin/update Admin.Home.update
 
 GET     /admin/allImageGroup                    Admin.Media.allImageGroup
-GET     /admin/allImage                         Admin.Media.allImage
+GET /admin/allImage Admin.MediaPar.allMediaPar
 GET     /admin/addImage                         Admin.Media.addImage
 GET     /admin/allComment                       Admin.Comment.allComment
 GET     /admin/allUser                          Admin.User.allUser
@@ -115,10 +115,9 @@ POST	/admin/getBanner						admin.Banner.getBanner
 GET		/admin/allBannerlist					admin.Banner.allBannerList
 #合作媒体管理
 GET		/admin/allMediaPar						admin.MediaPar.allMediaPar
-GET	/admin/media/add admin.MediaPar.addMediaPar
-POST /admin/media/add admin.MediaPar.addMediaPar
-GET /admin/media/ajaxAdd admin.MediaPar.ajaxAdd
-POST /admin/media/ajaxAdd admin.MediaPar.ajaxAdd
+* /admin/media/add admin.MediaPar.addMediaPar
+* /admin/media/ajaxAdd admin.MediaPar.ajaxAdd
+* /admin/media/dragAdd admin.MediaPar.dragAdd
 GET /admin/Media/edit admin.MediaPar.edit
 POST /admin/Media/edit admin.MediaPar.edit
 GET /admin/Media/delete admin.MediaPar.delete
