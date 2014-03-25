@@ -3,25 +3,21 @@
 	<h1>编辑文章</h1>
 </div>
 <form method="POST" class="row">
-	<div class="col-md-8">
-		<table class="table">
-			<tr>
-				<td>标题</td>
-				<td>
-					<input value="${article.title}" name="title">
-				</td>
-			</tr>
-			<tr>
-				<td>
-					内容
-				</td>
-				<td>
-					<textarea name="content" id="content">${article.content}</textarea>
-				</td>
-			</tr>
-		</table>
-		<input type="hidden" name="category_id">
-	</div>
+
+    <div class="col-sm-8 form-group">
+        <div class="col-sm-12">
+            <input type="text" id="title" name="title" placeholder="文章标题" class="col-xs-12 col-sm-12" value="${article.title}">
+        </div>
+
+        <div class="col-sm-12" style="margin-top: 10px">
+            <textarea id="editor" name="content" class="col-sm-12" style="height:400px;">
+                ${article.content}
+            </textarea>
+        </div>
+        <input type="hidden" name="category_id" id="category_id" value="${categories[0].id}">
+    </div>
+
+
 	<div class="col-md-4">
 		<div class="widget-box">
             <div class="widget-header widget-header-flat">
@@ -39,7 +35,12 @@
                     		#{/list}
                     	</ul>
                     </div>
-                    <button class="btn btn-primary">保存</button>
+                    <div class="row">
+                        <div class="col-xs-12" style="text-align: center">
+                            <hr/>
+                            <button class="btn btn-primary">保存</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

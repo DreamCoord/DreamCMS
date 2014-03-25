@@ -14,7 +14,6 @@
                 &lt;strong&gt;内容&lt;/strong&gt;
             </textarea>
         </div>
-        <button type="submit" class="btn btn-primary">保存</button>
         <input type="hidden" name="category_id" id="category_id" value="${categories[0].id}">
     </div>
     
@@ -34,6 +33,12 @@
                     			<li category_id="${category.id}" #{if categories[0].id==category.id}class="jstree-clicked"#{/if}>${category.name}</li>
                     		#{/list}
                     	</ul>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12" style="text-align: center">
+                            <hr/>
+                            <button type="submit" class="btn btn-primary">保存</button>
+                        </div>
                     </div>
                 </div>
             </div>
