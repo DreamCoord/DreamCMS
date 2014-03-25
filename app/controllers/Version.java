@@ -51,8 +51,12 @@ public class Version {
 	}
 	
 	public static Version getLatestVersion(){
-		List<Version> versions = Version.getAvailableVersions();
 		Version latest_version = new Version(0,0,0);
+		List<Version> versions = Version.getAvailableVersions();
+		if(versions == null){
+			return latest_version;
+		}
+		
 		for(Version v:versions){
 			if(v.newerThan(latest_version)){
 				latest_version = v;
