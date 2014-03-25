@@ -16,9 +16,10 @@ public class index  extends Controller{
 	public static void index(){
 		List<Object> keys = Collections.list(Play.configuration.keys());
 		
-		List<Version> versions = new ArrayList<Version>();
 		try{
+			List<Version> versions = new ArrayList<Version>();
 			versions = Version.getAvailableVersions();
+			System.out.println(versions.get(0).major);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -28,7 +29,6 @@ public class index  extends Controller{
 			e.printStackTrace();
 		}
 		
-		System.out.println(versions.get(0).major);
 		System.out.println(session.get("username")+"-------------");
 		if(!session.isEmpty()){
 			String username = session.get("username");
