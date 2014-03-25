@@ -24,5 +24,7 @@
 
 <script src="@{'/public/assets/js/ckeditor/ckeditor.js'}"></script>
 <script>
-	CKEDITOR.replace("content");
+	CKEDITOR.replace("content",{
+    	filebrowserUploadUrl: '@{admin.MediaPar.ajaxAdd}'
+    });
 </script>

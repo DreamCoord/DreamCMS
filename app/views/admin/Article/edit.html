@@ -51,7 +51,9 @@
 <link rel="stylesheet" href="@{'/public/assets/js/jstree/themes/default/style.min.css'}" />
 <script src="@{'/public/assets/js/ckeditor/ckeditor.js'}"></script>
 <script>
-	CKEDITOR.replace('content');
+	CKEDITOR.replace('content',{
+    	filebrowserUploadUrl: '@{admin.MediaPar.ajaxAdd}'
+    });
 	$(function(){
 		$('#categories_tree')
 			.on('changed.jstree', function(e, data){

@@ -52,7 +52,9 @@
 <script charset="utf-8" src="@{'/public/assets/js/jstree/jstree.min.js'}"></script>
 <link rel="stylesheet" href="@{'/public/assets/js/jstree/themes/default/style.min.css'}" />
 <script>
-    CKEDITOR.replace('editor');
+    CKEDITOR.replace('editor',{
+    	filebrowserUploadUrl: '@{admin.MediaPar.ajaxAdd}'
+    });
     $(function(){
     	$('#categories_tree')
     		.on('changed.jstree', function(e, data){

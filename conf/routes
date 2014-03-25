@@ -115,8 +115,10 @@ POST	/admin/getBanner						admin.Banner.getBanner
 GET		/admin/allBannerlist					admin.Banner.allBannerList
 #合作媒体管理
 GET		/admin/allMediaPar						admin.MediaPar.allMediaPar
-GET	/admin/addMediaPar admin.MediaPar.addMediaPar
-POST	/admin/addMediaPar						admin.MediaPar.addMediaPar
+GET	/admin/media/add admin.MediaPar.addMediaPar
+POST /admin/media/add admin.MediaPar.addMediaPar
+GET /admin/media/ajaxAdd admin.MediaPar.ajaxAdd
+POST /admin/media/ajaxAdd admin.MediaPar.ajaxAdd
 GET /admin/Media/edit admin.MediaPar.edit
 POST /admin/Media/edit admin.MediaPar.edit
 GET /admin/Media/delete admin.MediaPar.delete
