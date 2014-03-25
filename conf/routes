@@ -56,7 +56,7 @@ GET     /admin/Home                             Admin.Home.home
 GET /admin/update Admin.Home.update
 
 GET     /admin/allImageGroup                    Admin.Media.allImageGroup
-GET /admin/allImage Admin.MediaPar.allMediaPar
+GET     /admin/allImage                         Admin.MediaPar.allMediaPar
 GET     /admin/addImage                         Admin.Media.addImage
 GET     /admin/allComment                       Admin.Comment.allComment
 GET     /admin/allUser                          Admin.User.allUser
