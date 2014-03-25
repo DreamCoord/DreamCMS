@@ -93,39 +93,7 @@
             </a>
         </li>
 
-        <li>
-            <a href="#">
-                <img src="@{'/public/assets/avatars/avatar3.png'}" class="msg-photo" alt="Susan's Avatar" />
-										<span class="msg-body">
-											<span class="msg-title">
-												<span class="blue">Susan:</span>
-												不知道翻译...
-											</span>
 
-											<span class="msg-time">
-												<i class="icon-time"></i>
-												<span>20分钟以前</span>
-											</span>
-										</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="#">
-                <img src="@{'/public/assets/avatars/avatar4.png'}" class="msg-photo" alt="Bob's Avatar" />
-										<span class="msg-body">
-											<span class="msg-title">
-												<span class="blue">Bob:</span>
-												到底是不是英文 ...
-											</span>
-
-											<span class="msg-time">
-												<i class="icon-time"></i>
-												<span>下午3:15</span>
-											</span>
-										</span>
-            </a>
-        </li>
 
         <li>
             <a href="inbox.html">
@@ -323,10 +291,10 @@
                 $(this).parent().addClass("active");
                 return false;
             }
-
-
-
         })
+        $(document).ready(function() {
+            $("#home").trigger("click");
+        } )
     })
 </script>
 
