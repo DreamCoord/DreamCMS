@@ -85,7 +85,7 @@ public class Version {
 		Version current_version = Version.getCurrentVersion();
 		Version latest_version = Version.getLatestVersion();
 		if(latest_version.newerThan(current_version)){
-			URL url = new URL("http://localhost:8000/download_version?ver="+latest_version.toString());
+			URL url = new URL("http://dream-cms.dreamcoord.org/download_version?ver="+latest_version.toString());
 			File f = new File(latest_version.toString()+".zip");
 			FileUtils.copyURLToFile(url, f);
 			
