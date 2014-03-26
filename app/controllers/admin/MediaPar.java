@@ -15,7 +15,7 @@ import com.alibaba.fastjson.JSON;
 
 public class MediaPar extends Controller{
 	
-	private static void basicAdd(File upload) {
+	private static String basicAdd(File upload) {
 		//文件保存目录路径
 		String savePath =  Play.applicationPath.toString()+Play.configuration.getProperty("newsImg.savePath", "/public/upload/");
 		//文件保存目录URL
@@ -29,7 +29,7 @@ public class MediaPar extends Controller{
 			//检查目录写权限
 			if(!uploadDir.canWrite()){
 				renderJSON("{\"state\":\"上传目录没有写权限。\"}");
-				return;
+				return "";
 			}
 			String ymd = "MediaPar";
 			savePath += ymd + "/";
@@ -56,8 +56,7 @@ public class MediaPar extends Controller{
 				media.time = timeStr;
 				media.save();
 				
-				
-				flash("msg", "<div class='alert alert-success'>保存成功</div>");
+				return media.mappath;
 			} catch (Exception e) {
 				e.printStackTrace();
 				renderJSON("{\"state\":\"上传失败\"}");
@@ -65,6 +64,7 @@ public class MediaPar extends Controller{
 		}else{
 			renderJSON("{\"state\":\"请选择文件。\"}");
 		}
+		return "";
 	}
 	
 	public static void addMediaPar(File upload){
@@ -81,8 +81,8 @@ public class MediaPar extends Controller{
 	}
 	
 	public static void ajaxAdd(File upload, String CKEditorFuncNum){
-		basicAdd(upload);
-		render(CKEditorFuncNum, "");
+		String media_url = basicAdd(upload);
+		render(CKEditorFuncNum, media_url);
 	}
 	
 	public static void allMediaPar(){
