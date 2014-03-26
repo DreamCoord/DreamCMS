@@ -4,17 +4,12 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 import java.util.regex.*;
-
 import play.Play;
-
 import org.apache.commons.io.*;
-
 import net.lingala.zip4j.core.*;
 import net.lingala.zip4j.exception.ZipException;
-
 import com.google.gson.*;
 import com.google.gson.reflect.*;
-
 public class Version {
 	public int major;
 	public int minor;
