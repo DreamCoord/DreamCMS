@@ -16,7 +16,7 @@ public class login extends Controller{
 	}
 	public static void logout(){
 		session.clear();
-		redirect("/admin/index");
+		redirect("/admin/login.html");
 	}
 	//验证信息
 	public static void Verification(String username ,String password){

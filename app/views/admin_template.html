@@ -9,35 +9,20 @@
     <!-- basic styles -->
     <link href="@{'/public/assets/css/bootstrap.min.css'}" rel="stylesheet" />
     <link rel="stylesheet" href="@{'/public/assets/css/font-awesome.min.css'}" />
-
     <!--[if IE 7]>
     <link rel="stylesheet" href="@{'/public/assets/css/font-awesome-ie7.min.css'}" />
     <![endif]-->
-
-    <!-- page specific plugin styles -->
-
     <!-- fonts -->
-
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
-
     <!-- ace styles -->
-
     <link rel="stylesheet" href="@{'/public/assets/css/ace.min.css'}" />
     <link rel="stylesheet" href="@{'/public/assets/css/ace-rtl.min.css'}" />
     <link rel="stylesheet" href="@{'/public/assets/css/ace-skins.min.css'}" />
-
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="@{'/public/assets/css/ace-ie.min.css'}" />
     <![endif]-->
-
-    <!-- inline styles related to this page -->
-
     <!-- ace settings handler -->
-
     <script src="@{'/public/assets/js/ace-extra.min.js'}"></script>
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-
     <!--[if lt IE 9]>
     <script src="@{'/public/assets/js/html5shiv.js'}"></script>
     <script src="@{'/public/assets/js/respond.min.js'}"></script>
@@ -51,13 +36,13 @@
 </script>
 
 <div class="navbar-container" id="navbar-container">
-<div class="navbar-header pull-left">
-    <a href="#" class="navbar-brand">
-        <small>
-            <img src="@{'/public/assets/images/weixin.png'}" style="height: 45px">
+<div class="navbar-header pull-left" >
+    <a href="#" class="navbar-brand" style="line-height: 45px">
+        <!--<small>-->
+
             <!--<span class="red">EFM</span>-->
-            内容管理平台
-        </small>
+            Dream-CMS 内容管理系统
+        <!--</small>-->
     </a><!-- /.brand -->
 </div><!-- /.navbar-header -->
 
@@ -79,22 +64,19 @@
         <li>
             <a href="#">
                 <img src="@{'/public/assets/avatars/avatar.png'}" class="msg-photo" alt="Alex's Avatar" />
-										<span class="msg-body">
-											<span class="msg-title">
-												<span class="blue">Alex:</span>
-												不知道写啥 ...
-											</span>
+                    <span class="msg-body">
+                        <span class="msg-title">
+                            <span class="blue">Alex:</span>
+                            不知道写啥 ...
+                        </span>
 
-											<span class="msg-time">
-												<i class="icon-time"></i>
-												<span>1分钟以前</span>
-											</span>
-										</span>
+                        <span class="msg-time">
+                            <i class="icon-time"></i>
+                            <span>1分钟以前</span>
+                        </span>
+                    </span>
             </a>
         </li>
-
-
-
         <li>
             <a href="inbox.html">
                 查看所有消息
@@ -103,18 +85,16 @@
         </li>
     </ul>
 </li>
-
 <li class="light-blue">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-        <img class="nav-user-photo" src="@{'/public/assets/avatars/user.jpg'}" alt="Jason's Photo" />
-								<span class="user-info">
-									<small>欢迎光临,</small>
-									Admin
-								</span>
-
+        <!--<img class="nav-user-photo" src="@{'/public/assets/avatars/user.jpg'}" alt="Jason's Photo" />-->
+        <i class="icon-user bigger-200"></i>
+            <span class="user-info">
+                <small>欢迎光临,</small>
+                ${username}
+            </span>
         <i class="icon-caret-down"></i>
     </a>
-
     <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
         <li>
             <a href="#">
@@ -133,7 +113,7 @@
         <li class="divider"></li>
 
         <li>
-            <a href="#">
+            <a href="@{Admin.login.logout}">
                 <i class="icon-off"></i>
                 退出
             </a>
@@ -144,22 +124,18 @@
 </div><!-- /.navbar-header -->
 </div><!-- /.container -->
 </div>
-
 <div class="main-container" id="main-container">
 <script type="text/javascript">
     try{ace.settings.check('main-container' , 'fixed')}catch(e){}
 </script>
-
 <div class="main-container-inner">
 <a class="menu-toggler" id="menu-toggler" href="#">
     <span class="menu-text"></span>
 </a>
-
 <div class="sidebar" id="sidebar">
     <script type="text/javascript">
         try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
     </script>
-
     <div class="sidebar-shortcuts" id="sidebar-shortcuts">
         <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
             <button class="btn btn-success">
@@ -182,25 +158,20 @@
             <span class="btn btn-danger"></span>
         </div>
     </div><!-- #sidebar-shortcuts -->
-
     #{include 'Admin/nav_list.html' /}
     <!-- /.nav-list -->
-
     <div class="sidebar-collapse" id="sidebar-collapse">
         <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
     </div>
-
     <script type="text/javascript">
         try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
     </script>
 </div>
-
 <div class="main-content">
     <div class="breadcrumbs" id="breadcrumbs">
         <script type="text/javascript">
             try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
         </script>
-
         <ul class="breadcrumb">
             <li>
                 <i class="icon-home home-icon"></i>
@@ -208,75 +179,47 @@
             </li>
             <li class="active" id="breadcrumb_name"></li>
         </ul><!-- .breadcrumb -->
-
         <div class="nav-search" id="nav-search">
             <form class="form-search">
-								<span class="input-icon">
-									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off">
-									<i class="icon-search nav-search-icon"></i>
-								</span>
+				<span class="input-icon">
+					<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off">
+					<i class="icon-search nav-search-icon"></i>
+				</span>
             </form>
         </div><!-- #nav-search -->
     </div>
     <iframe id="main_content" src=""  style="border:0px;width:100%;height:800px;"></iframe>
 </div><!-- /.main-content -->
-
-
-
 <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
     <i class="icon-double-angle-up icon-only bigger-110"></i>
 </a>
 </div><!-- /.main-container -->
 </div>
 <!-- basic scripts -->
-
 <!--[if !IE]> -->
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
 <!-- <![endif]-->
-
 <!--[if IE]>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <![endif]-->
-
 <!--[if !IE]> -->
-
 <script type="text/javascript">
     window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"script>");
 </script>
-
 <!-- <![endif]-->
-
 <!--[if IE]>
 <script type="text/javascript">
     window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");
 </script>
 <![endif]-->
-
 <script type="text/javascript">
     if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"script>");
 </script>
 <script src="@{'/public/assets/js/bootstrap.min.js'}"></script>
 <script src="@{'/public/assets/js/typeahead-bs2.min.js'}"></script>
-
-<!-- page specific plugin scripts -->
-
-<!--[if lte IE 8]>
-<script src="@{'/public/assets/js/excanvas.min.js'}"></script>
-<![endif]-->
-
 <script src="@{'/public/assets/js/jquery-ui-1.10.3.custom.min.js'}"></script>
 <script src="@{'/public/assets/js/jquery.ui.touch-punch.min.js'}"></script>
-
-
-<!-- ace scripts -->
-
-<script src="@{'/public/assets/js/ace-elements.min.js'}"></script>
 <script src="@{'/public/assets/js/ace.min.js'}"></script>
-
-<!-- inline scripts related to this page -->
-
 <script>
     $(function(){
         $('.nav-list a').click(function(){
@@ -297,8 +240,6 @@
         } )
     })
 </script>
-
-<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
 </body>
 </html>
 
