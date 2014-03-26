@@ -38,7 +38,7 @@
                             	None
                             #{/else}
                             </td>
-                            <td>${article.content}</td>
+                            <td>${article.content.raw()}</td>
                             <td>${article.time}</td>
                             <td>
                                 <a class="btn btn-info" href="@{admin.Article.edit(article.id)}">

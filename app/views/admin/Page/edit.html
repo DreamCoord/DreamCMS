@@ -1,30 +1,52 @@
-#{extends 'admin_frame_page.html' /}
+#{extends 'admin_page_template.html' /}
+
 
 <div class="page-header">
-	<h1>编辑页面</h1>
+    <h1>添加页面</h1>
 </div>
+<form id="form-wizard" class="form-horizontal" method='post' class="row">
 
-<form method="POST">
-	<table class="table">
-		<tr>
-			<td>标题</td>
-			<td>
-				<input name="title" class="form-control" value="${page.title}">
-			</td>
-		</tr>
-		<tr>
-			<td>内容</td>
-			<td>
-				<textarea name="content" id="content">${page.content}</textarea>
-			</td>
-		</tr>
-	</table>
-	<button type="submit" class="btn btn-primary">保存</button>
+    <div class="col-sm-8 form-group">
+        <div class="col-sm-12">
+            <input type="text" id="title" name="title" placeholder="标题" class="col-xs-12 col-sm-12" value="${page.title}">
+        </div>
+
+        <div class="col-sm-12" style="margin-top: 10px">
+            <textarea id="editor" name="content" class="col-sm-12" style="height:400px;">
+                ${page.content}
+            </textarea>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="widget-box">
+            <div class="widget-header widget-header-flat">
+                <h4 class="smaller">
+                    保存
+                </h4>
+            </div>
+
+            <div class="widget-body">
+                <div class="widget-main">
+
+                    <div class="row">
+                        <div class="col-xs-12" style="text-align: center">
+                            <hr/>
+                            <button type="submit" class="btn btn-primary">保存</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </form>
+
+
 
 <script src="@{'/public/assets/js/ckeditor/ckeditor.js'}"></script>
 <script>
-	CKEDITOR.replace('content',{
-    	filebrowserUploadUrl: '@{admin.MediaPar.ajaxAdd}'
+    CKEDITOR.replace("content",{
+        filebrowserUploadUrl: '@{admin.MediaPar.ajaxAdd}'
     });
 </script>

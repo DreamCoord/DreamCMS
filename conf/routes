@@ -4,40 +4,7 @@
 
 # Home page
 GET     /                                       Application.index
-GET     /index.html                             Application.index
-#新闻资讯
-GET		/news									New.index
-GET		/news/tzgg								New.tzgg
-GET		/news/yjdt								New.yjdt
-GET     /news/xwzt								New.xwzt
-GET		/news/pages								New.pages
-GET		/news/hzmt								New.hzmt
-#名家名作
-GET		/mjmz									Mjmz.index
-GET		/mjmz/zzml								Mjmz.zzml
-GET		/mjmz/zpzs								Mjmz.zpzs
-GET		/mjmz/zxzl								Mjmz.zxzl
-GET		/mjmz/pages								Mjmz.pages
-GET		/mjmz/classlist							Mjmz.ClassList
-#交流服务
-GET		/jlfw									Jlfw.index
-GET		/jlfw/zzjj								Jlfw.zzjj
-GET		/jlfw/yjfk								Jlfw.yjfk
-GET		/jlfw/wldc								Jlfw.wldc
-#投资收藏
-GET		/tzsc									Tzsc.index
-GET		/tzsc/tzsz								Tzsc.tzsz
-GET		/tzsc/yssd								Tzsc.yssd
-#合作支持
-GET		/hzzc									Hzzc.index
-GET		/hzzc/hzfs								Hzzc.hzfs
-GET		/hzzc/jzwm								Hzzc.jzwm
-GET		/hzzc/lxwm								Hzzc.lxwm
-#其他部分
-GET     /websitemap                             Other.websitemap
-GET     /yqlj		                            Other.yqlj
-GET     /jszc	                                Other.jszc
-GET		/hyfw									Other.hyfw
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
@@ -53,7 +20,7 @@ GET     /public/                                staticDir:public
 
 #后台导航
 GET     /admin/Home                             Admin.Home.home
-GET /admin/update Admin.Home.update
+GET     /admin/update                           Admin.Home.update
 
 GET     /admin/allImageGroup                    Admin.Media.allImageGroup
 GET     /admin/allImage                         Admin.MediaPar.allMediaPar
@@ -70,30 +37,30 @@ GET     /admin/fenxi                            Admin.Systems.fenxi
 GET     /admin									admin.index.index
 GET     /admin/index							admin.index.index
 GET     /admin/login							admin.login.login
-GET /admin/logout admin.login.logout
+GET     /admin/logout                           admin.login.logout
 POST    /admin/verification						admin.login.Verification
 GET     /admin/register							admin.login.register
-GET /admin/user/edit admin.User.edit
-POST /admin/user/edit admin.User.edit
-GET /admin/user/delete admin.User.delete
-POST /admin/user/add admin.User.add
+GET     /admin/user/edit                        admin.User.edit
+POST    /admin/user/edit                        admin.User.edit
+GET     /admin/user/delete                      admin.User.delete
+POST    /admin/user/add                         admin.User.add
 
 #文章管理
-GET		/admin/article						admin.Article.allArticle
-GET /admin/Article/add admin.Article.addArticle
-POST /admin/Article/add admin.Article.addArticle
-GET /admin/article/edit admin.Article.edit
-POST /admin/article/edit admin.Article.edit
-GET /admin/article/delete admin.Article.delete
+GET		/admin/article						    admin.Article.allArticle
+GET     /admin/Article/add                      admin.Article.addArticle
+POST    /admin/Article/add                      admin.Article.addArticle
+GET     /admin/article/edit                     admin.Article.edit
+POST    /admin/article/edit                     admin.Article.edit
+GET     /admin/article/delete                   admin.Article.delete
 
 #分类管理
 GET		/admin/allArtClass						admin.Classify.allArticleClass
-GET /admin/addClassify	admin.Classify.addClassify
-POST /admin/addClassify	admin.Classify.addClassify
+GET     /admin/addClassify	                    admin.Classify.addClassify
+POST    /admin/addClassify	                    admin.Classify.addClassify
 GET		/admin/category						    admin.Classify.allClassify
-GET /admin/category/edit admin.Classify.edit
-POST /admin/category/edit admin.Classify.edit
-GET /admin/category/delete admin.Classify.delete
+GET     /admin/category/edit                    admin.Classify.edit
+POST    /admin/category/edit                    admin.Classify.edit
+GET     /admin/category/delete                  admin.Classify.delete
 
 #作品管理
 POST	/admin/addWorks							admin.Works.addWorks
@@ -115,19 +82,19 @@ POST	/admin/getBanner						admin.Banner.getBanner
 GET		/admin/allBannerlist					admin.Banner.allBannerList
 #合作媒体管理
 GET		/admin/allMediaPar						admin.MediaPar.allMediaPar
-* /admin/media/add admin.MediaPar.addMediaPar
-* /admin/media/ajaxAdd admin.MediaPar.ajaxAdd
-* /admin/media/dragAdd admin.MediaPar.dragAdd
-GET /admin/Media/edit admin.MediaPar.edit
-POST /admin/Media/edit admin.MediaPar.edit
-GET /admin/Media/delete admin.MediaPar.delete
+*       /admin/media/add                        admin.MediaPar.addMediaPar
+*       /admin/media/ajaxAdd                    admin.MediaPar.ajaxAdd
+*       /admin/media/dragAdd                    admin.MediaPar.dragAdd
+GET     /admin/Media/edit                       admin.MediaPar.edit
+POST    /admin/Media/edit                       admin.MediaPar.edit
+GET     /admin/Media/delete                     admin.MediaPar.delete
 #页面管理
-GET /admin/page/add admin.Page.add
+GET     /admin/page/add                         admin.Page.add
 POST	/admin/page/add							admin.Page.add
-GET		/admin/page							admin.Page.allPages
-GET /admin/page/edit admin.Page.edit
-POST /admin/page/edit admin.Page.edit
-GET /admin/page/delete admin.Page.delete
+GET		/admin/page							    admin.Page.allPages
+GET     /admin/page/edit                        admin.Page.edit
+POST    /admin/page/edit                        admin.Page.edit
+GET     /admin/page/delete                      admin.Page.delete
 #用户管理
 POST	/admin/addUser							admin.RBAC.addUser
 GET		/admin/allUser							admin.RBAC.allUser
