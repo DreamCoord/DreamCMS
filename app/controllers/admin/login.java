@@ -16,32 +16,30 @@ public class login extends Controller{
 	}
 	public static void logout(){
 		session.clear();
-		redirect("/admin/login.html");
+		render("admin/login.html");
 	}
 	//验证信息
 	public static void Verification(String username ,String password){
 		validation.required(username);
 		validation.required(password);
-		String hql = "from rbac_users as users where users.username=:username and users.password=:password";
-		Query query = JPA.em().createQuery(hql);		
-		query.setParameter("username", username);
-		query.setParameter("password", password);			
-		List<rbac_users> users = query.getResultList();
+        if(!username.equals("") && !password.equals("")){
+            String hql = "from rbac_users as users where users.username=:username and users.password=:password";
+            Query query = JPA.em().createQuery(hql);
+            query.setParameter("username", username);
+            query.setParameter("password", password);
+            List<rbac_users> users = query.getResultList();
+            System.out.println("--------->"+query.getResultList());
+            if(!users.isEmpty()){
+                session.put("username", username);
+                redirect("/admin/index");
+            }else{
+                String state = "err";
+                render("/admin/login.html",state);
+            }
+        }else{
+            render("/admin/login.html");
+        }
 
-		
-		if(!users.isEmpty()){
-			session.put("username", username);
-//			httpServletRequest.getSession().put("userProducts", products);
-//			Cache.set(session.getId(), products); 
-//			session().put("username", username);
-//			session().put("real_name", admin.real_name);
-//			System.out.println("win");
-//			renderJSON("{\"state\":\"ok\"}");
-			redirect("/admin/index");
-		}else{
-			System.out.println("err");
-			renderJSON("{\"state\":\"err\"}");
-		}
 		
 	}
 	

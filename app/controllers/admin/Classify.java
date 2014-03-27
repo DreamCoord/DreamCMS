@@ -25,7 +25,6 @@ public class Classify extends Controller{
 		String msg = flash.get("msg");
 		render(categories, msg);
 	}
-	
 	public static void edit(int id){
 		mag_classify category = mag_classify.findById(id);
 		if(request.method == "GET"){
@@ -40,28 +39,20 @@ public class Classify extends Controller{
 			redirect("/admin/category");
 		}
 	}
-	
 	public static void delete(int id){
 		mag_classify category = mag_classify.findById(id);
 		category.delete();
-		
 		flash("msg", "<div class='alert alert-success'>删除成功</div>");
 		redirect("/admin/category");
 	}
-	
 	//文章内部分类
 	public static void allArticleClass(){
 		List<mag_classify> pList = mag_classify.find("from mag_classify order by id desc").fetch();
 		List<mag_classlist> classList = new ArrayList<mag_classlist>();
-		
-		
 		for(int i =0;i<pList.size();i++){
 			mag_classlist listitem = new mag_classlist(pList.get(i).id,pList.get(i).pid,pList.get(i).name,true);
-		
 			classList.add(listitem);
 		}
-		
-		
 		String pStr=JSON.toJSONString(classList);
 		String jsonStr = "{\"classList\":"+pStr+"}";
 		System.out.println(pStr);
