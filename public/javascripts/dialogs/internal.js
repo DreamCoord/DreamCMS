@@ -13,7 +13,7 @@
 
     browser = UE.browser;
 
-    ajax = UE.ajax;
+    resultajax = UE.ajax;
 
     $G = function ( id ) {
         return document.getElementById( id )

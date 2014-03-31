@@ -28,8 +28,13 @@ GET     /admin/addImage                         Admin.Media.addImage
 GET     /admin/allComment                       Admin.Comment.allComment
 GET     /admin/allUser                          Admin.User.allUser
 
-GET     /admin/changgui                         Admin.Systems.changgui
-GET     /admin/links                            Admin.Systems.links
+GET     /admin/changgui_query                   Admin.Systems.changgui_query
+GET     /admin/changgui_edit                   Admin.Systems.changgui_edit
+GET     /admin/link_query                       Admin.Systems.link_query
+GET     /admin/link_editinit                       Admin.Systems.link_editinit
+POST     /admin/link_edit                       Admin.Systems.link_edit
+POST   /admin/link_add                       admin.Systems.link_add
+GET     /admin/link_del                     Admin.Systems.link_del
 GET     /admin/logs                             Admin.Systems.logs
 GET     /admin/fenxi                            Admin.Systems.fenxi
 

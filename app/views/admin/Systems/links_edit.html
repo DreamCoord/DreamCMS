@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+#{extends 'admin_page_template.html' /}
+#{set title:' 管理' /}
+
+<!--销售管理查看每个拜访任务进行情况的页面-->
+<html lang="en">
+<script type="text/javascript">
+
+    function edit(){
+        var pushData = {};
+        pushData.id= $("#ID_id").val();
+        pushData.name= $("#name").val();
+        pushData.address= $("#address").val();
+        pushData.remark= $("#remark").val();
+        $.ajax({
+            url: 'link_edit',
+            type: 'get',
+            data:pushData,
+            dataType:'json',
+            async:false,
+            error: function(data){alert(result);},
+            success: function(data){
+                var flag = data.state;
+                if(flag=="yes"){
+                    alert("修改成功");
+                }else{
+                    alert("修改失败");
+                }
+            }
+        });
+    }
+</script>
+<body onload="onload_f()">
+#{if flash.msg}
+    <p class="success">${flash.msg}</p>
+#{/if}
+<div class="page-content">
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="widget-box">
+                <div class="widget-header widget-header-flat">
+                    <h4 class="smaller">
+                        <i class="icon-globe smaller-80"></i>
+                        添加友情链接
+                    </h4>
+                </div>
+
+                <div class="widget-body">
+                    <div class="widget-main">
+                        <form class="form-horizontal" role="form" method="POST" action="@{admin.Systems.link_edit}">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right" > 网站名称 ： </label>
+
+                                        <div class="col-sm-9">
+                                            <input type="text" name="name" placeholder="网站名称"  value="${blogroll.name}"class="col-xs-10 col-sm-10">
+                                            <input type="hidden" name="id" placeholder="网站Id"  value="${blogroll.id}"class="col-xs-10 col-sm-10">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right" > 网站地址 ： </label>
+
+                                        <div class="col-sm-9">
+                                            <input type="text" name="address" placeholder="网站地址" value="${blogroll.address}" class="col-xs-10 col-sm-10">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label no-padding-right" > 描述 ： </label>
+
+                                        <div class="col-sm-9">
+                                            <input type="text" name="remark"  placeholder="描述" value="${blogroll.remark}" class="col-xs-10 col-sm-10">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="row">
+                                            <label class="col-sm-3 control-label no-padding-right" >状态 ：</label>
+                                            <div class="col-sm-9">
+                                                <select id="state" name="state" >
+                                                    <option value="有效">有效</option>
+                                                    <option value="无效">无效</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-xs-12" style="text-align: center">
+                                    <input type="submit" class="btn btn-success" value="保存"></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script charset="utf-8" src="@{'/public/assets/js/jquery.dataTables.min.js'}"></script>
+        <script charset="utf-8" src="@{'/public/assets/js/jquery.dataTables.bootstrap.js'}"></script>
+
+        <script charset="utf-8" src="@{'/public/assets/js/select2.min.js'}"></script>
+        <script charset="utf-8" src="@{'/public/assets/js/efm_option.js'}"></script>
+
+        <script>
+            $("#state option[value='${blogroll.state}']").attr("selected", "selected");
+            efmOption.TablStyle();
+
+        </script>
+
+</div><!-- /.page-content -->
+</body>
+</html>

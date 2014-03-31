@@ -34,6 +34,13 @@ public class Home extends Controller {
     	
     	String version = Version.getCurrentVersion().toString();
     	String msg = flash.get("msg");
+    	//文章数目
+    	List<mag_article> wenzhangs = mag_article.find("order by time desc").fetch();
+    	int wenzhang= wenzhangs.size();
+    	//图片数目
+    	List<mag_mediapar> tupians = mag_mediapar.find("order by id desc").fetch();
+    	int tupian= tupians.size();
+    	//
         render(version, new_version_available, msg);
     }
 
