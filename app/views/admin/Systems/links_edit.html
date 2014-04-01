@@ -4,36 +4,8 @@
 
 <!--销售管理查看每个拜访任务进行情况的页面-->
 <html lang="en">
-<script type="text/javascript">
+<body >
 
-    function edit(){
-        var pushData = {};
-        pushData.id= $("#ID_id").val();
-        pushData.name= $("#name").val();
-        pushData.address= $("#address").val();
-        pushData.remark= $("#remark").val();
-        $.ajax({
-            url: 'link_edit',
-            type: 'get',
-            data:pushData,
-            dataType:'json',
-            async:false,
-            error: function(data){alert(result);},
-            success: function(data){
-                var flag = data.state;
-                if(flag=="yes"){
-                    alert("修改成功");
-                }else{
-                    alert("修改失败");
-                }
-            }
-        });
-    }
-</script>
-<body onload="onload_f()">
-#{if flash.msg}
-    <p class="success">${flash.msg}</p>
-#{/if}
 <div class="page-content">
 
     <div class="row">
@@ -42,8 +14,11 @@
                 <div class="widget-header widget-header-flat">
                     <h4 class="smaller">
                         <i class="icon-globe smaller-80"></i>
-                        添加友情链接
+                        修改友情链接
                     </h4>
+                    #{if flash.msg}
+                    <p class="success">${flash.msg.raw()}</p>
+                    #{/if}
                 </div>
 
                 <div class="widget-body">

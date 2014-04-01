@@ -63,8 +63,11 @@ public class Systems extends Controller{
 			blogroll.state=state;
 			blogroll.save();
 		}catch(Exception e){
+			
 		}
+		flash("msg", "<div class='alert alert-success'>保存成功</div>");
 		link_query();
+		
 	}
 	/**
 	 * 友情链接修改加载

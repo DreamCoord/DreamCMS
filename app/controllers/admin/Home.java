@@ -40,8 +40,7 @@ public class Home extends Controller {
     	//图片数目
     	List<mag_mediapar> tupians = mag_mediapar.find("order by id desc").fetch();
     	int tupian= tupians.size();
-    	//
-        render(version, new_version_available, msg);
+        render(version, new_version_available, msg,wenzhang,tupian);
     }
 
 }

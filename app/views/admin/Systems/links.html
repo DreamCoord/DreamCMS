@@ -18,9 +18,9 @@
                     var flag = result.state;
                     if(flag=="yes"){
                         $(trid).remove();
-                        alert("删除成功");
+                       alert("保存成功");
                     }else{
-                        alert("删除失败");
+                      alert("保存失败");
                     }
                 }
             });
@@ -38,8 +38,10 @@
                     <i class="icon-globe smaller-80"></i>
                     添加友情链接
                 </h4>
+                #{if flash.msg}
+                <p class="success">${flash.msg.raw()}</p>
+                #{/if}
             </div>
-
             <div class="widget-body">
                 <div class="widget-main">
                     <form class="form-horizontal" role="form" method="POST" action="@{admin.Systems.link_add}">
