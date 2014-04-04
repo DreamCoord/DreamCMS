@@ -1,5 +1,8 @@
 #{extends 'admin_page_template.html' /}
 <script type="text/javascript">
+	$(function(){
+		$('#add_links_form').validate();
+	});
     function edit_init(id){
         var sRet =window.showModalDialog("link_editinit?id="+id,"",'dialogWidth=300px;dialogHeight=500px;center:yes;');
     }
@@ -56,28 +59,28 @@
             </div>
             <div class="widget-body">
                 <div class="widget-main">
-                    <form class="form-horizontal" role="form" method="POST" action="@{admin.Systems.link_add}">
+                    <form id="add_links_form" class="form-horizontal" role="form" method="POST" action="@{admin.Systems.link_add}">
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label no-padding-right" > 网站名称 ： </label>
 
                                     <div class="col-sm-9">
-                                        <input type="text" name="name" placeholder="网站名称" class="col-xs-10 col-sm-10">
+                                        <input type="text" name="name" placeholder="网站名称" class="col-xs-10 col-sm-10" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label no-padding-right" > 网站地址 ： </label>
 
                                     <div class="col-sm-9">
-                                        <input type="text" name="address" placeholder="网站地址" class="col-xs-10 col-sm-10">
+                                        <input type="text" name="address" placeholder="网站地址" class="col-xs-10 col-sm-10" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label no-padding-right" > 描述 ： </label>
 
                                     <div class="col-sm-9">
-                                        <input type="text" name="remark"  placeholder="描述" class="col-xs-10 col-sm-10">
+                                        <input type="text" name="remark"  placeholder="描述" class="col-xs-10 col-sm-10" >
                                     </div>
                                 </div>
                                 <div>
@@ -163,6 +166,8 @@
 
 <script charset="utf-8" src="@{'/public/assets/js/select2.min.js'}"></script>
 <script charset="utf-8" src="@{'/public/assets/js/efm_option.js'}"></script>
+
+<script src="@{'/public/assets/js/jquery.validate.min.js'}"></script>
 
 <script>
     efmOption.TablStyle();
