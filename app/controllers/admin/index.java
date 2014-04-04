@@ -11,7 +11,6 @@ public class index  extends Controller{
 //	@Before
 //	public static void before(){
 //		System.out.println("session"+session.get("username"));
-//		
 //	}
 	public static void index(){
 		List<Object> keys = Collections.list(Play.configuration.keys());
@@ -36,7 +35,5 @@ public class index  extends Controller{
 		}else{
 			render("admin/login.html");
 		}
-		
 	}
-
 }
