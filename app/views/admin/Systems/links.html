@@ -18,17 +18,29 @@
                     var flag = result.state;
                     if(flag=="yes"){
                         $(trid).remove();
-                       alert("保存成功");
+                       	bootbox.prompt("What is your name?", function(result) {
+						if (result === null) {
+							//Example.show("Prompt dismissed");
+						} else {
+							//Example.show("Hi <b>"+result+"</b>");
+						}
+					});
                     }else{
-                      alert("保存失败");
+                     	bootbox.prompt("What is your name?", function(result) {
+							if (result === null) {
+								//Example.show("Prompt dismissed");
+							} else {
+								//Example.show("Hi <b>"+result+"</b>");
+							}
+						});
                     }
                 }
             });
         }else{
             return false;
         }
-
     }
+    
 </script>
 <div class="row">
     <div class="col-sm-4">
@@ -89,8 +101,6 @@
                             </div>
                         </div>
                     </form>
-
-
                 </div>
             </div>
         </div>
