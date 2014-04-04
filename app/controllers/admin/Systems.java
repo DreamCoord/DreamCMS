@@ -92,7 +92,7 @@ public class Systems extends Controller{
 			e.printStackTrace();
 		}
 		flash("msg", "<div class='alert alert-success'>保存成功</div>");
-		render("admin/Systems/links_edit.html",blogroll);
+		link_query();
 	}
 	/**
 	 * 友情链接删除
